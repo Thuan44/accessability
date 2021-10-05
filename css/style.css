@@ -5,8 +5,7 @@ body {
   background-color: #efeef3;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow-x: hidden;
   color: #505050;
 }
@@ -72,15 +71,13 @@ h3.login-title::first-letter {
 }
 
 .login-img {
-  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
-          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 
 .form-container {
   background-color: #fff;
   min-width: 300px;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .login-title {
@@ -88,7 +85,8 @@ h3.login-title::first-letter {
   font-weight: bold !important;
 }
 
-.login-subtitle, .signup-subtitle {
+.login-subtitle,
+.signup-subtitle {
   color: #271549;
 }
 
@@ -107,6 +105,31 @@ h3.login-title::first-letter {
 /*
 * Homepage
 */
+<<<<<<< HEAD
+/*
+* Course
+*/
+.course-btn {
+  background-color: #271549;
+  margin: 50px;
+  font-size: 2rem;
+  color: #EFEEF3;
+}
+
+.course-btn:hover {
+  background-color: #42237A;
+}
+
+.course_items {
+  text-align: center;
+}
+
+.course-bar {
+  height: 100px;
+  color: #EFEEF3;
+  background-color: #271549;
+}
+=======
 #homepage {
   height: 100vh;
   background-color: #271549;
@@ -146,4 +169,5 @@ h3.login-title::first-letter {
 /*
 * SingleCourse
 */
+>>>>>>> develop
 /*# sourceMappingURL=style.css.map */

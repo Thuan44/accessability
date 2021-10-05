@@ -88,8 +88,7 @@ h3.login-title::first-letter {
   font-weight: bold !important;
 }
 
-.login-subtitle,
-.signup-subtitle {
+.login-subtitle, .signup-subtitle {
   color: #271549;
 }
 

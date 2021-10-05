@@ -1,5 +1,6 @@
 <?php include_once 'header.php' ?>
 
+<<<<<<< HEAD
 
 <section id="homepage">
     <!-- <div class="motif-background-container w-100">
@@ -24,6 +25,9 @@
         </div>
     </main>
 </section>
+=======
+<a href="login.php" class="btn btn-primary">Se Connecter</a>
+>>>>>>> 0725f113c43d44138af256db01e3ad6f2bf444d0
 
 
 <?php include_once 'footer.php' ?>

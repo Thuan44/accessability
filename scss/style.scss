@@ -91,12 +91,11 @@ h3.login-title {
     font-weight: bold !important;
 }
 
-.login-subtitle,
-.signup-subtitle {
+.login-subtitle, .signup-subtitle{
     color: $primary-color;
 }
 
-.login-btn {
+.login-btn{
     background-color: $primary-color;
 
     &:hover {

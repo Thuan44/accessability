@@ -8,7 +8,18 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-x: hidden;
+}
+
+h3 {
   color: #505050;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0 !important;
+  color: #505050;
+}
+
+h3::first-letter {
+  text-transform: uppercase;
 }
 
 .small-divider {
@@ -22,6 +33,9 @@ body {
   padding: 50px;
 }
 
+/*
+* Signup
+*/
 .btn-action-custom {
   background: #fdce37;
   color: #271549;
@@ -34,9 +48,6 @@ body {
   border: 2px solid #fdce37;
 }
 
-/*
-* Signup
-*/
 .signup-title {
   color: #271549 !important;
 }
@@ -88,7 +99,8 @@ h3.login-title::first-letter {
   font-weight: bold !important;
 }
 
-.login-subtitle, .signup-subtitle {
+.login-subtitle,
+.signup-subtitle {
   color: #271549;
 }
 
@@ -101,6 +113,7 @@ h3.login-title::first-letter {
 }
 
 .signup-group {
+  font-size: 0.9rem;
   font-size: 0.9rem;
 }
 
@@ -130,6 +143,15 @@ h3.login-title::first-letter {
   width: 90%;
 }
 
+/*
+* singleCourse
+*/
+#single_course h1 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
 .btn-authentication {
   width: 150px !important;
   background: #fdce37;
@@ -144,6 +166,26 @@ h3.login-title::first-letter {
 }
 
 /*
-* SingleCourse
+* Courses
 */
+.course-btn {
+  background-color: #271549;
+  margin: 50px;
+  font-size: 2rem;
+  color: #efeef3;
+}
+
+.course-btn:hover {
+  background-color: #42237a;
+}
+
+.course_items {
+  text-align: center;
+}
+
+.course-bar {
+  height: 100px;
+  color: #efeef3;
+  background-color: #271549;
+}
 /*# sourceMappingURL=style.css.map */

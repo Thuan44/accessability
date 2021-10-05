@@ -6,7 +6,8 @@ $dark-gray: #7C7C7C;
 /*
 * General
 */
-body{
+
+body {
     background-color: $light-gray;
     margin: 0;
     padding: 0;
@@ -14,13 +15,12 @@ body{
     overflow-x: hidden;
 }
 
-h3{ 
+h3 {
     color: $dark-gray;
     text-transform: lowercase;
     letter-spacing: .5px;
     margin-bottom: 0 !important;
-
-    &::first-letter{
+    &::first-letter {
         text-transform: uppercase;
     }
 }
@@ -33,63 +33,63 @@ h3{
 }
 
 
-
 /*
 * Signup
 */
-.signup-title{
+
+.signup-title {
     color: $primary-color !important;
 }
-
-
 
 
 /*
 * Login
 */
-.login-logo-container{
+
+.login-logo-container {
     position: absolute;
     top: 20px;
     left: 20px;
     width: 50px;
 }
 
-.login-left, .login-right{
+.login-left,
+.login-right {
     height: 100vh;
 }
 
-.login-left{
+.login-left {
     background-color: $primary-color;
 }
 
-.login-img{
+.login-img {
     filter: drop-shadow( 3px 3px 3px rgba(0, 0, 0, .4));
 }
 
-.form-container{
+.form-container {
     background-color: #fff;
     min-width: 300px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-.login-title{
+.login-title {
     color: $primary-color;
     font-weight: bold !important;
 }
 
-.login-subtitle, .signup-subtitle{
+.login-subtitle,
+.signup-subtitle {
     color: $primary-color;
 }
 
-.login-btn{
+.login-btn {
     background-color: $primary-color;
-
-    &:hover{
+    &:hover {
         background-color: #42237A;
     }
 }
 
-.signup-group{
+.signup-group {
     font-size: .9rem;
 }
 
@@ -98,3 +98,27 @@ h3{
 * Homepage
 */
 
+
+/*
+* Course
+*/
+
+.course-btn {
+    background-color: $primary-color;
+    margin: 50px;
+    font-size: 2rem;
+    color: $light-gray;
+    &:hover {
+        background-color: #42237A;
+    }
+}
+
+.course_items {
+    text-align: center;
+}
+
+.course-bar {
+    height: 100px;
+    color: $light-gray;
+    background-color: $primary-color;
+}

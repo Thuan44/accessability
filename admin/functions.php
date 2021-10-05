@@ -52,3 +52,18 @@ function signUp($userEmail, $userPassword)
 
     header('Location: login.php');
 }
+
+//Update Database
+function updateDB()
+{
+    global $connection;
+
+    $user_id = $_SESSION['user_id'];
+    //'".$user_id."'
+    $query = "UPDATE users SET user_fontsize = '".$_POST['fontsize']."',
+                                user_fontcolor = '".$_POST['fontcolor']."'
+     WHERE user_id = '".$user_id."' ";
+    $result = $connection->query($query);
+
+    header('Location: settings.php');
+}

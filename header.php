@@ -27,5 +27,3 @@ include_once 'admin/functions.php';
 </head>
 
 <body>
-
-</html>

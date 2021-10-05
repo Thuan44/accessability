@@ -26,7 +26,9 @@ if (isset($_POST['submit_login'])) {
                     <div class="form-container rounded p-5">
                         <form class="form" action="#" method="POST">
 
-                            <?php //session_destroy(); ?>
+                            <?php if($_SESSION){
+                                session_destroy();
+                            } ?>
 
                             <input type="email" class="form-control mb-2" placeholder="Email" name="user_email"
                                 value="">

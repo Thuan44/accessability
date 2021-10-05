@@ -20,8 +20,4 @@ include_once 'admin/functions.php';
 <body>
 
 
-</body>
-
-</html>
-
     

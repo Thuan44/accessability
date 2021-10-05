@@ -2,7 +2,7 @@
 * General
 */
 body {
-  background-color: #EFEEF3;
+  background-color: #efeef3;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -10,10 +10,17 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  color: #efeef3;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
 h3 {
-  color: #7C7C7C;
+  color: #7c7c7c;
   text-transform: lowercase;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   margin-bottom: 0 !important;
 }
 
@@ -45,7 +52,8 @@ h3::first-letter {
   width: 50px;
 }
 
-.login-left, .login-right {
+.login-left,
+.login-right {
   height: 100vh;
 }
 
@@ -70,7 +78,8 @@ h3::first-letter {
   font-weight: bold !important;
 }
 
-.login-subtitle, .signup-subtitle {
+.login-subtitle,
+.signup-subtitle {
   color: #271549;
 }
 
@@ -79,14 +88,47 @@ h3::first-letter {
 }
 
 .login-btn:hover {
-  background-color: #42237A;
+  background-color: #42237a;
 }
 
 .signup-group {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 /*
 * Homepage
 */
+#homepage {
+  height: 100vh;
+  background-color: #271549;
+  color: #efeef3;
+  position: relative;
+}
+
+#home_main_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+}
+
+.motif-background-container {
+  position: absolute;
+  top: 10px;
+}
+
+.btn-authentication {
+  width: 150px !important;
+  background: #fdce37;
+  color: #271549;
+  border: 2px solid #271549;
+}
+
+.btn-authentication:hover {
+  background: #271549;
+  color: #fdce37;
+  border: 2px solid #fdce37;
+}
 /*# sourceMappingURL=style.css.map */

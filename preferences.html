@@ -3,6 +3,7 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="preferences.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>Preferences</title>
 </head>
 
@@ -45,7 +46,7 @@
 
   </div>
 
-  <div class="ExemplePreferences"></div>
+  <div class="ExemplePreferences">
     <p>Commençons par les variables, notion fondamentale en développement. 
       Le but d'un programme est de faire quelque chose avec des données ou, 
       en d'autres termes, avec les choses que vous mettez dans votre programme. 
@@ -55,36 +56,42 @@
 
   <label for="FirstHighlightColor">Choisissez la première couleur  de mise en évidence (titres et liens) :</label><br>
 
-      <button name="FirstHighlightColor" type="submit" value="Red"></button>
-      <button name="FirstHighlightColor" type="submit" value="Yellow"></button>
-      <button name="FirstHighlightColor" type="submit" value="Green"></button>
-      <button name="FirstHighlightColor" type="submit" value="Cyan"></button>
-      <button name="FirstHighlightColor" type="submit" value="Blue"></button>
-      <button name="FirstHighlightColor" type="submit" value="Purple"></button><br>
-
-      <a href="" for="FirstHighlightColor">Exemple de lien cliquable :</a><br>
+      <div class="PremiersBoutonsDAltonisme">
+        <button name="FirstHighlightColor" type="submit" value="Red">Rouge</button>
+        <button name="FirstHighlightColor" type="submit" value="Yellow">Jaune</button>
+        <button name="FirstHighlightColor" type="submit" value="Green">Vert</button>
+        <button name="FirstHighlightColor" type="submit" value="Cyan">Cyan</button>
+        <button name="FirstHighlightColor" type="submit" value="Blue">Bleu</button>
+        <button name="FirstHighlightColor" type="submit" value="Purple">Violet</button><br><br>
+      </div>
+        
+      <a class="FirstColor" href="" for="FirstHighlightColor">Exemple de lien cliquable :</a><br><br>
 
     <label for="SecondHighlightColor">Choisissez la deuxième couleur  de mise en évidence (boutons) :</label><br>
+    
+      <div class="DeuxiemesBoutonsDAltonisme">
+        <button name="SecondHighlightColor" type="submit" value="Red">Rouge</button>
+        <button name="SecondHighlightColor" type="submit" value="Yellow">Jaune</button>
+        <button name="SecondHighlightColor" type="submit" value="Green">Vert</button>
+        <button name="SecondHighlightColor" type="submit" value="Cyan">Cyan</button>
+        <button name="SecondHighlightColor" type="submit" value="Blue">Bleu</button>
+        <button name="SecondHighlightColor" type="submit" value="Purple">Violet</button><br><br>
+      </div>
 
-      <button name="SecondHighlightColor" type="submit" value="Red"></button>
-      <button name="SecondHighlightColor" type="submit" value="Yellow"></button>
-      <button name="SecondHighlightColor" type="submit" value="Green"></button>
-      <button name="SecondHighlightColor" type="submit" value="Cyan"></button>
-      <button name="SecondHighlightColor" type="submit" value="Blue"></button>
-      <button name="SecondHighlightColor" type="submit" value="Purple"></button><br>
-
-      <button name="DemoButton" for="SecondHighlightColor">Bouton exemple</button><br>
+      <button class="DemoButton" for="SecondHighlightColor">Bouton exemple</button><br><br>
 
     <label for="ThirdHighlightColor">Choisissez la troisième couleur de mise en évidence (élements importants et erreurs) :</label><br>
 
-      <button name="ThirdHighlightColor" type="submit" value="Red"></button>
-      <button name="ThirdHighlightColor" type="submit" value="Yellow"></button>
-      <button name="ThirdHighlightColor" type="submit" value="Green"></button>
-      <button name="ThirdHighlightColor" type="submit" value="Cyan"></button>
-      <button name="ThirdHighlightColor" type="submit" value="Blue"></button>
-      <button name="ThirdHighlightColor" type="submit" value="Purple"></button><br>
+      <div class="TroisiemesBoutonsDAltonisme">
+        <button name="ThirdHighlightColor" type="submit" value="Red">Rouge</button>
+        <button name="ThirdHighlightColor" type="submit" value="Yellow">Jaune</button>
+        <button name="ThirdHighlightColor" type="submit" value="Green">Vert</button>
+        <button name="ThirdHighlightColor" type="submit" value="Cyan">Cyan</button>
+        <button name="ThirdHighlightColor" type="submit" value="Blue">Bleu</button>
+        <button name="ThirdHighlightColor" type="submit" value="Purple">Violet</button><br><br>
+      </div>
 
-      <a class="DemoError" for="ThirdHighlightColor">Exception in thread "main"</button><br>
+      <a class="DemoError" for="ThirdHighlightColor">Exception in thread "main"</button><br><br>
 
     </body>
 </html>

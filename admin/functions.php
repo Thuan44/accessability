@@ -56,14 +56,20 @@ function signUp($userEmail, $userPassword)
 }
 
 //Update Database
-function updateDB()
+function updateDB($fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
 {
+
     global $connection;
 
     $user_id = $_SESSION['user_id'];
-    //'".$user_id."'
-    $query = "UPDATE users SET user_fontsize = '".$_POST['fontsize']."',
-                                user_fontcolor = '".$_POST['fontcolor']."'
+
+    $query = "UPDATE users SET user_fontfamily = '".$fontname."',
+                                user_fontsize = '".$fontsize."',
+                                user_fontcolor = '".$fontcolor."',
+                                user_eltcolor_1	= '".$eltcolor1."',
+                                user_eltcolor_2	= '".$eltcolor2."',
+                                user_eltcolor_3	= '".$eltcolor3."',
+                                user_bgcolor = '".$bgcolor."' 
      WHERE user_id = '".$user_id."' ";
     $result = $connection->query($query);
 

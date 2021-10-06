@@ -137,24 +137,19 @@ h3.login-title {
 * Course
 */
 
-.course-btn {
-    background-color: $primary-color;
-    margin: 50px;
-    font-size: 2rem;
-    color: $light-gray;
-    &:hover {
-        background-color: #42237a;
-    }
-}
-
-.course_items {
+.course-title {
     text-align: center;
-}
-
-.course-bar {
-    height: 100px;
+    height: 50px;
     color: $light-gray;
     background-color: $primary-color;
+}
+.card-body{
+    color : black !important
+}
+.card-img-top {
+    text-align: center;
+    height: 150px;
+    width: 100%;
 }
 
 h1 {

@@ -7,7 +7,17 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+h3 {
   color: #505050;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0 !important;
+  color: #505050;
+}
+h3::first-letter {
+  text-transform: uppercase;
 }
 
 .small-divider {
@@ -21,21 +31,20 @@ body {
   padding: 50px;
 }
 
+/*
+* Signup
+*/
 .btn-action-custom {
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
 }
-
 .btn-action-custom:hover {
   background: #271549;
   color: #fdce37;
   border: 2px solid #fdce37;
 }
 
-/*
-* Signup
-*/
 .signup-title {
   color: #271549 !important;
 }
@@ -49,7 +58,6 @@ h3.login-title {
   letter-spacing: 0.5px;
   margin-bottom: 0 !important;
 }
-
 h3.login-title::first-letter {
   text-transform: uppercase;
 }
@@ -93,43 +101,18 @@ h3.login-title::first-letter {
 .login-btn {
   background-color: #271549;
 }
-
 .login-btn:hover {
   background-color: #42237a;
 }
 
 .signup-group {
   font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 /*
 * Homepage
 */
-<<<<<<< HEAD
-/*
-* Course
-*/
-.course-btn {
-  background-color: #271549;
-  margin: 50px;
-  font-size: 2rem;
-  color: #EFEEF3;
-}
-
-.course-btn:hover {
-  background-color: #42237A;
-}
-
-.course_items {
-  text-align: center;
-}
-
-.course-bar {
-  height: 100px;
-  color: #EFEEF3;
-  background-color: #271549;
-}
-=======
 #homepage {
   height: 100vh;
   background-color: #271549;
@@ -137,7 +120,27 @@ h3.login-title::first-letter {
   position: relative;
 }
 
-#homepage h1 {
+/*
+* Course
+*/
+.course-title {
+  text-align: center;
+  height: 50px;
+  color: #efeef3;
+  background-color: #271549;
+}
+
+.card-body {
+  color: black !important;
+}
+
+.card-img-top {
+  text-align: center;
+  height: 150px;
+  width: 100%;
+}
+
+h1 {
   color: #efeef3;
   font-size: 4rem;
   text-transform: uppercase;
@@ -148,8 +151,7 @@ h3.login-title::first-letter {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 90%;
 }
 
@@ -159,15 +161,8 @@ h3.login-title::first-letter {
   color: #271549;
   border: 2px solid #271549;
 }
-
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
   border: 2px solid #fdce37;
-}
-
-/*
-* SingleCourse
-*/
->>>>>>> develop
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

@@ -1,9 +1,14 @@
-<?php include_once 'header.php' ?>
+<?php 
+
+include_once 'header.php';
+$user_id = $_GET['user_id'];
+
+?>
 
 
 <section id="single_course">
     <main id="single_course_main_content" class="main-container">
-        <a href="courses.php" class="btn btn-primary w-100 btn-action-custom mb-4">RETOUR AUX COURS</a>
+        <a href="courses.php/user_id=<?= $user_id ?>" class="btn btn-primary w-100 btn-action-custom mb-4">RETOUR AUX COURS</a>
 
         <h1 id="course_title_custom" class="text-center mb-2">Utilisez une API en toute sécurité</h1>
         <div class="iframe-container">

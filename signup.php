@@ -23,7 +23,7 @@ if (isset($_POST['submit_signup'])) {
         <div class="col-md-6 col-xs-12 px-0">
             <div class="login-right">
                 <div class="login-form d-flex justify-content-center align-items-center h-100 flex-column">
-                    <h3 class="login-title text-center mb-2">Access<span class="text-uppercase">A</span>bility</h3>
+                <h1 class="login-title text-center mb-2"><span class="text-uppercase" style="color: #fdce37; text-shadow: 1px 1px 2px #777">L</span>ook<span class="text-uppercase" style="color: #fdce37; text-shadow: 1px 1px 2px #777">A</span>ble</h1>
                     <p class="signup-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes
                         malvoyantes</p>
                     <div class="form-container rounded p-5">

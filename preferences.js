@@ -2,34 +2,33 @@ $(document).ready(function(){
     
     // Définit la taille de la police du texte selon le bouton cliqué
     // Impact la taille de police des exemples du daltonisme
-    $('button[name="FontSize"]').click(function(){
-
+    $('input[type=radio][name="FontSize"]').change(function(){
        var taillepolice = $(this).val();
 
       switch (taillepolice) {
-        case "Small":
-            $("p").css('font-size', 16);
+        case "16":
+            $("#text-demo").css('font-size', 16);
             $(".DemoError").css('font-size', 16);
              $(".FirstColor").css('font-size', 16);
              $(".DemoButton").css('font-size', 16);
             break;
-        case "Medium":
-            $("p").css('font-size', 22);
-            $(".DemoError").css('font-size', 22);
-             $(".FirstColor").css('font-size', 22);
-             $(".DemoButton").css('font-size', 22);
+        case "20":
+            $("#text-demo").css('font-size', 20);
+            $(".DemoError").css('font-size', 20);
+             $(".FirstColor").css('font-size', 20);
+             $(".DemoButton").css('font-size', 20);
             break;
-        case "Large":
-            $("p").css('font-size', 27);
-            $(".DemoError").css('font-size', 27);
-             $(".FirstColor").css('font-size', 27);
-             $(".DemoButton").css('font-size', 27);
+        case "24":
+            $("#text-demo").css('font-size', 24);
+            $(".DemoError").css('font-size', 24);
+             $(".FirstColor").css('font-size', 24);
+             $(".DemoButton").css('font-size', 24);
             break;
-        case "ExtraLarge":
-            $("p").css('font-size', 32);
-            $(".DemoError").css('font-size', 32);
-             $(".FirstColor").css('font-size', 32);
-             $(".DemoButton").css('font-size', 32);
+        case "28":
+            $("#text-demo").css('font-size', 28);
+            $(".DemoError").css('font-size', 28);
+             $(".FirstColor").css('font-size', 28);
+             $(".DemoButton").css('font-size', 28);
             break;
     }
     });

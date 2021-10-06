@@ -10,6 +10,14 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  color: #efeef3;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px #777;
+}
+
 h3 {
   color: #505050;
   text-transform: lowercase;
@@ -55,17 +63,6 @@ h3::first-letter {
 /*
 * Login
 */
-h3.login-title {
-  color: #505050;
-  text-transform: lowercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0 !important;
-}
-
-h3.login-title::first-letter {
-  text-transform: uppercase;
-}
-
 .login-logo-container {
   position: absolute;
   top: 20px;
@@ -89,9 +86,30 @@ h3.login-title::first-letter {
 
 .form-container {
   background-color: #fff;
-  min-width: 300px;
+  min-width: 400px;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.form-container input {
+  padding: 10px;
+  line-height: 28px;
+}
+
+.form-container input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input::-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input::placeholder {
+  font-size: 1.2rem;
 }
 
 .login-title {
@@ -102,10 +120,13 @@ h3.login-title::first-letter {
 .login-subtitle,
 .signup-subtitle {
   color: #271549;
+  font-size: 1.6rem;
 }
 
 .login-btn {
   background-color: #271549;
+  font-size: 1.2rem;
+  padding: 10px;
 }
 
 .login-btn:hover {
@@ -113,8 +134,8 @@ h3.login-title::first-letter {
 }
 
 .signup-group {
-  font-size: 0.9rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 /*
@@ -125,13 +146,6 @@ h3.login-title::first-letter {
   background-color: #271549;
   color: #efeef3;
   position: relative;
-}
-
-#homepage h1 {
-  color: #efeef3;
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 800;
 }
 
 #home_main_content {

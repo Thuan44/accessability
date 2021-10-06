@@ -5,6 +5,7 @@ $user_id = $_SESSION['user_id'];
 $course_id = $_GET['id'];
 
 $course = getSingleCourse($course_id);
+updateSessionPreferences($user_id);
 
 
 //===== CHANGE STYLE ACCORDING TO USER PREFERENCES =====//

@@ -15,6 +15,14 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    color: $light-gray;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px #777;
+}
+
 h3 {
     color: $dark-gray;
     text-transform: lowercase;
@@ -37,7 +45,6 @@ h3 {
     padding: 50px;
 }
 
-
 /*
 * Signup
 */
@@ -56,20 +63,9 @@ h3 {
     color: $primary-color !important;
 }
 
-
 /*
 * Login
 */
-h3.login-title {
-    color: $dark-gray;
-    text-transform: lowercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0 !important;
-    &::first-letter {
-        text-transform: uppercase;
-    }
-}
-
 .login-logo-container {
     position: absolute;
     top: 20px;
@@ -92,8 +88,17 @@ h3.login-title {
 
 .form-container {
     background-color: #fff;
-    min-width: 300px;
+    min-width: 400px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+    input {
+        padding: 10px;
+        line-height: 28px;
+
+        &::placeholder{
+            font-size: 1.2rem;
+        }
+    }
 }
 
 .login-title {
@@ -104,20 +109,22 @@ h3.login-title {
 .login-subtitle,
 .signup-subtitle {
     color: $primary-color;
+    font-size: 1.6rem;
 }
 
 .login-btn {
     background-color: $primary-color;
+    font-size: 1.2rem;
+    padding: 10px;
     &:hover {
         background-color: #42237a;
     }
 }
 
 .signup-group {
-    font-size: 0.9rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-size: 1.1rem;
 }
-
 
 /*
 * Homepage
@@ -127,15 +134,7 @@ h3.login-title {
     background-color: $primary-color;
     color: $light-gray;
     position: relative;
-
-    h1 {
-        color: $light-gray;
-        font-size: 4rem;
-        text-transform: uppercase;
-        font-weight: 800;
-    }
 }
-
 
 #home_main_content {
     position: absolute;
@@ -157,7 +156,6 @@ h3.login-title {
     }
 }
 
-
 /*
 * singleCourse
 */
@@ -169,15 +167,13 @@ h3.login-title {
     }
 }
 
-.inside-container{
+.inside-container {
     padding: 0 120px 0;
 }
 
-.btn-retour-cours{
+.btn-retour-cours {
     border: 2px solid $secondary-color;
 }
-
-
 
 /*
 * Courses
@@ -198,8 +194,8 @@ h3.login-title {
     color: $light-gray;
     background-color: $primary-color;
 }
-.card-body{
-    color : black !important
+.card-body {
+    color: black !important;
 }
 .card-img-top {
     text-align: center;

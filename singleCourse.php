@@ -17,7 +17,7 @@ $course = getSingleCourse($course_id);
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
             <hr>
             <div class="iframe-container mb-4">
-                <iframe width="100%" height="500" src="<?= $course['course_video'] ?>">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 </iframe>
                 <!-- <video width="100%" height="500" controls>
                         <source src="https://www.youtube.com/embed/tgbNymZ7vqY">
@@ -30,7 +30,7 @@ $course = getSingleCourse($course_id);
                 <p class="para-course-1 para-custom">
                     <?= $course['course_text'] ?>
                 </p>
-                <div class="img-inside-container">
+                <div class="img-inside-container mt-4">
                     <img src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
                 </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
@@ -45,6 +45,8 @@ $course = getSingleCourse($course_id);
                     <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
+
+            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
         </main>
     </div>
 </section>

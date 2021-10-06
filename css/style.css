@@ -63,11 +63,24 @@ h3::first-letter {
 /*
 * Login
 */
+.logo-lookable-container {
+  width: 60px;
+}
+
 .login-logo-container {
   position: absolute;
   top: 20px;
   left: 20px;
   width: 50px;
+}
+
+.homepage-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px !important;
 }
 
 .login-left,
@@ -148,6 +161,14 @@ h3::first-letter {
   position: relative;
 }
 
+#homepage p.lead {
+  font-size: 1.4rem;
+}
+
+#homepage p {
+  font-size: 1.2rem;
+}
+
 #home_main_content {
   position: absolute;
   top: 50%;
@@ -159,6 +180,8 @@ h3::first-letter {
 
 .btn-authentication {
   width: 150px !important;
+  padding: 10px;
+  font-size: 1.2rem;
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
@@ -168,6 +191,10 @@ h3::first-letter {
   background: #271549;
   color: #fdce37;
   border: 2px solid #fdce37;
+}
+
+.btn-logged-user {
+  width: 200px !important;
 }
 
 /*
@@ -216,5 +243,14 @@ h3::first-letter {
   text-align: center;
   height: 150px;
   width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .login-left, .main-content-img {
+    display: none !important;
+  }
+  .main-content-text {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

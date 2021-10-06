@@ -34,7 +34,7 @@ function login($userEmail, $userPassword)
             }
             // Visitor
             if ($_SESSION['user_role'] == 1) {
-                if (is_null($_SESSION['user_fontfamily'])) {
+                if(is_null($_SESSION['user_fontfamily'])){
                     header('Location: ./preferences.php');
                 } else {
                     header('Location: ./courses.php');

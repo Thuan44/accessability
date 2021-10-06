@@ -41,7 +41,6 @@ h3 {
 /*
 * Signup
 */
-
 .btn-action-custom {
     background: $secondary-color;
     color: $primary-color;
@@ -61,7 +60,6 @@ h3 {
 /*
 * Login
 */
-
 h3.login-title {
     color: $dark-gray;
     text-transform: lowercase;
@@ -124,19 +122,57 @@ h3.login-title {
 /*
 * Homepage
 */
-
 #homepage {
     height: 100vh;
     background-color: $primary-color;
     color: $light-gray;
     position: relative;
+
+    h1 {
+        color: $light-gray;
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}
+
+
+#home_main_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
 }
 
 
 /*
-* Course
+* singleCourse
 */
+#single_course {
+    h1 {
+        color: $dark-gray;
+        font-size: 3rem;
+        font-weight: 800;
+    }
+}
 
+.btn-authentication {
+    width: 150px !important;
+    background: $secondary-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    &:hover {
+        background: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+    }
+}
+
+
+/*
+* Courses
+*/
 .course-btn {
     background-color: $primary-color;
     margin: 50px;
@@ -155,31 +191,4 @@ h3.login-title {
     height: 100px;
     color: $light-gray;
     background-color: $primary-color;
-}
-
-h1 {
-    color: $light-gray;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-#home_main_content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-}
-
-.btn-authentication {
-    width: 150px !important;
-    background: $secondary-color;
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    &:hover {
-        background: $primary-color;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
-    }
 }

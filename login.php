@@ -1,3 +1,7 @@
+<?php if(isset($_SESSION)){
+    session_destroy();
+} ?>
+
 <?php include_once 'header.php' ?>
 
 <?php
@@ -24,10 +28,6 @@ if (isset($_POST['submit_login'])) {
                     <p class="login-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes malvoyantes</p>
                     <div class="form-container rounded p-5">
                         <form class="form" action="#" method="POST">
-
-                            <?php if($_SESSION){
-                                session_destroy();
-                            } ?>
 
                             <input type="email" class="form-control mb-2" placeholder="Email" name="user_email" value="">
                             <input type="password" class="form-control mb-2" placeholder="Mot de passe" name="user_password" value="">

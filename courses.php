@@ -1,13 +1,13 @@
 <?php
 include_once 'header.php';
-$user_id = $_GET['user_id'];
+$user_id = $_SESSION['user_id'];
 
 if (@$_POST['add']) {
     setCourseInDB($course_id);
 }
 
 $listCourses = listCourses();
-$listCoursesById = listCoursesById($_SESSION['user_id']);
+$listCoursesById = listCoursesById($user_id);
 
 ?>
 
@@ -31,7 +31,7 @@ $listCoursesById = listCoursesById($_SESSION['user_id']);
                                 <?php echo $row['course_title']; ?>
                             </div>
                             <form action="" method="POST">
-                                <a href="singlecourse.php?id=<?php echo $row['course_id'] ?>&user_id=<?= $user_id ?>" class="btn btn-primary" name="add" value="<?php echo $row['course_id']; ?>">Allez au cours</a>
+                                <a href="singlecourse.php?id=<?php echo $row['course_id'] ?>" class="btn btn-primary" name="add" value="<?php echo $row['course_id']; ?>">Allez au cours</a>
                             </form>
                         </div>
                     </div>
@@ -53,7 +53,7 @@ $listCoursesById = listCoursesById($_SESSION['user_id']);
                                 <?php echo $row['course_title']; ?>
                             </div>
                             <div class="card_button">
-                                <a href="singlecourse.php?id=<?php echo $row['course_id'] ?>&user_id=<?= $user_id ?>" class="btn btn-primary" name="add">Allez au cours</a>
+                                <a href="singlecourse.php?id=<?php echo $row['course_id'] ?>" class="btn btn-primary" name="add">Allez au cours</a>
                             </div>
                         </div>
                     </div>

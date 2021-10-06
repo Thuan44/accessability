@@ -1,7 +1,7 @@
 <?php 
 
 include_once 'header.php';
-$user_id = $_GET['user_id'];
+$user_id = $_SESSION['user_id'];
 
 ?>
 

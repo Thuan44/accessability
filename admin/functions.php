@@ -45,16 +45,18 @@ function login($userEmail, $userPassword)
 }
 
 // Create account
-function signUp($userEmail, $userPassword)
+function signUp($userLastname, $userFirstname, $userEmail, $userPassword)
 {
     global $connection;
 
     // Encrypt password
     $encrypted_password = password_hash($userPassword, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (user_email, user_password) VALUES ( ?, ?)";
+    $query = "INSERT INTO users (user_lastname, user_firstname, user_email, user_password) VALUES ( ?, ?, ?, ?)";
     $result = $connection->prepare($query);
     $result->execute(array(
+        $userLastname, 
+        $userFirstname,
         $userEmail,
         $encrypted_password
     ));

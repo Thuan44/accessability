@@ -5,7 +5,7 @@ if (isset($_POST['submit_signup'])) {
     if ($_POST['user_password'] !== $_POST['password_confirmation']) {
         echo "Vos mots de passe ne correspondent pas";
     } else {
-        signUp($_POST['user_email'], $_POST['user_password']);
+        signUp($_POST['user_lastname'], $_POST['user_firstname'], $_POST['user_email'], $_POST['user_password']);
     }
 }
 ?>
@@ -31,6 +31,8 @@ if (isset($_POST['submit_signup'])) {
 
                             <?php session_destroy(); ?>
 
+                            <input type="text" class="form-control mb-2" placeholder="Nom" name="user_lastname" value="" required>
+                            <input type="text" class="form-control mb-2" placeholder="Prénom" name="user_firstname" value="" required>
                             <input type="email" class="form-control mb-2" placeholder="Email" name="user_email" value="" required>
                             <input type="password" class="form-control mb-2" placeholder="Mot de passe" name="user_password" value="" required>
                             <input type="password" class="form-control mb-2" placeholder="Confirmer mot de passe" name="password_confirmation" value="" required>

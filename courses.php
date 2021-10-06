@@ -47,7 +47,7 @@ $listCoursesById = listCoursesById($user_id);
                     <div class="col-6 col-md-3 my-5">
                         <div class="card px-2 py-2">
                             <div class="card_img">
-                                <img src="src/<?php echo $row['course_img']; ?>" class="card-img-top" alt="">
+                                <img src="src/<?php echo $row['course_img_principal']; ?>" class="card-img-top" alt="">
                             </div>
                             <div class="card-body justify-content-center">
                                 <?php echo $row['course_title']; ?>

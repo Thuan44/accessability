@@ -27,7 +27,7 @@ function login($userEmail, $userPassword)
             }
             // Visitor
             if ($_SESSION['user_role'] == 1) {
-                header('Location: ./courses.php?id='. $_SESSION['user_id']);
+                header('Location: ./courses.php?user_id='. $_SESSION['user_id']);
             }
         } else {
             echo "Connexion echouée";
@@ -96,4 +96,18 @@ function listCoursesById($id)
         )
     );
     return $request->fetchAll();
+}
+
+// Get single course
+function getSingleCourse($course_id)
+{
+    global $connection;
+    $select = "SELECT * FROM courses WHERE course_id=?";
+    $request = $connection->prepare($select);
+    $request->execute(
+        array(
+            $course_id
+        )
+    );
+    return $request->fetch();
 }

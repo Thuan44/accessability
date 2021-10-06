@@ -5,9 +5,21 @@ body {
   background-color: #efeef3;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-x: hidden;
+}
+
+h3 {
   color: #505050;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0 !important;
+  color: #505050;
+}
+
+h3::first-letter {
+  text-transform: uppercase;
 }
 
 .small-divider {
@@ -21,6 +33,9 @@ body {
   padding: 50px;
 }
 
+/*
+* Signup
+*/
 .btn-action-custom {
   background: #fdce37;
   color: #271549;
@@ -33,9 +48,6 @@ body {
   border: 2px solid #fdce37;
 }
 
-/*
-* Signup
-*/
 .signup-title {
   color: #271549 !important;
 }
@@ -71,13 +83,15 @@ h3.login-title::first-letter {
 }
 
 .login-img {
-  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 
 .form-container {
   background-color: #fff;
   min-width: 300px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .login-title {
@@ -100,36 +114,12 @@ h3.login-title::first-letter {
 
 .signup-group {
   font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 /*
 * Homepage
 */
-<<<<<<< HEAD
-/*
-* Course
-*/
-.course-btn {
-  background-color: #271549;
-  margin: 50px;
-  font-size: 2rem;
-  color: #EFEEF3;
-}
-
-.course-btn:hover {
-  background-color: #42237A;
-}
-
-.course_items {
-  text-align: center;
-}
-
-.course-bar {
-  height: 100px;
-  color: #EFEEF3;
-  background-color: #271549;
-}
-=======
 #homepage {
   height: 100vh;
   background-color: #271549;
@@ -167,7 +157,50 @@ h3.login-title::first-letter {
 }
 
 /*
-* SingleCourse
+* singleCourse
 */
->>>>>>> develop
+#single_course h1 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.inside-container {
+  padding: 0 120px 0;
+}
+
+.btn-retour-cours {
+  border: 2px solid #fdce37;
+}
+
+/*
+* Courses
+*/
+.course-btn {
+  background-color: #271549;
+  margin: 50px;
+  font-size: 2rem;
+  color: #efeef3;
+}
+
+.course-btn:hover {
+  background-color: #42237a;
+}
+
+.course_items {
+  text-align: center;
+  height: 50px;
+  color: #efeef3;
+  background-color: #271549;
+}
+
+.card-body {
+  color: black !important;
+}
+
+.card-img-top {
+  text-align: center;
+  height: 150px;
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

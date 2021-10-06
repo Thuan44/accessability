@@ -119,11 +119,56 @@ h3.login-title::first-letter {
   color: #efeef3;
   position: relative;
 }
+#homepage h1 {
+  color: #efeef3;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+#home_main_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
 
 /*
-* Course
+* singleCourse
 */
-.course-title {
+#single_course h1 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.btn-authentication {
+  width: 150px !important;
+  background: #fdce37;
+  color: #271549;
+  border: 2px solid #271549;
+}
+.btn-authentication:hover {
+  background: #271549;
+  color: #fdce37;
+  border: 2px solid #fdce37;
+}
+
+/*
+* Courses
+*/
+.course-btn {
+  background-color: #271549;
+  margin: 50px;
+  font-size: 2rem;
+  color: #efeef3;
+}
+.course-btn:hover {
+  background-color: #42237a;
+}
+
+.course_items {
   text-align: center;
   height: 50px;
   color: #efeef3;

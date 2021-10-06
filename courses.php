@@ -1,5 +1,4 @@
 <?php
-
 include_once 'header.php';
 $user_id = $_GET['user_id'];
 
@@ -8,7 +7,7 @@ if (@$_POST['add']) {
 }
 
 $listCourses = listCourses();
-$listCoursesById = listCoursesById($user_id);
+$listCoursesById = listCoursesById($_SESSION['user_id']);
 
 ?>
 

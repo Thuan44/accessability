@@ -8,6 +8,9 @@ include_once 'admin/functions.php';
 <html lang="en">
 
 <head>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="articulate.js"></script>
+    <script src="lectureaudio.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -18,6 +18,13 @@ function login($userEmail, $userPassword)
         $_SESSION['user_email'] = $data['user_email'];
         $_SESSION['user_password'] = $data['user_password'];
         $_SESSION['user_role'] = $data['user_role'];
+        $_SESSION['user_fontfamily'] = $data['user_fontfamily'];
+        $_SESSION['user_fontsize'] = $data['user_fontsize'];
+        $_SESSION['user_fontcolor'] = $data['user_fontcolor'];
+        $_SESSION['user_eltcolor_1'] = $data['user_eltcolor_1'];
+        $_SESSION['user_eltcolor_2'] = $data['user_eltcolor_2'];
+        $_SESSION['user_eltcolor_3'] = $data['user_eltcolor_3'];
+        $_SESSION['user_bgcolor'] = $data['user_bgcolor'];
 
         // Verify password
         if (password_verify($userPassword, $data['user_password'])) {
@@ -90,4 +97,31 @@ function getSingleCourse($course_id)
         )
     );
     return $request->fetch();
+}
+
+// Update preferences in database
+function updateCourse($userId, $fontFamily, $fontSize, $fontColor, $eltColor1, $eltColor2, $eltColor3, $bgColor){
+    global $connection;
+
+    $query = "UPDATE users
+            SET user_fontfamily = :fontFamily,
+            user_fontsize = :fontSize,
+            user_fontcolor = :fontColor,
+            user_eltcolor_1 = :eltColor1,
+            user_eltcolor_2 = :eltColor2,
+            user_eltcolor_3 = :eltColor3,
+            user_bgcolor = :bgColor
+            WHERE user_id = :userId";
+
+    $result = $connection->prepare($query);
+    $result->execute(array(
+        ':fontFamily' => $fontFamily,
+        ':fontSize' => $fontSize,
+        ':fontColor' => $fontColor,
+        ':eltColor1' => $eltColor1,
+        ':eltColor2' => $eltColor2,
+        ':eltColor3' => $eltColor3,
+        ':bgColor' => $bgColor,
+        ':userId' => $userId
+    ));
 }

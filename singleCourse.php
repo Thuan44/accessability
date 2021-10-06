@@ -6,6 +6,10 @@ $course_id = $_GET['id'];
 
 $course = getSingleCourse($course_id);
 
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+
 ?>
 
 
@@ -19,15 +23,11 @@ $course = getSingleCourse($course_id);
             <div class="iframe-container mb-4">
                 <iframe width="100%" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 </iframe>
-                <!-- <video width="100%" height="500" controls>
-                        <source src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                        Your browser does not support the video tag.
-                    </video> -->
             </div>
             <div class="inside-container">
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_1'] ?></h3>
                 <hr>
-                <p class="para-course-1 para-custom">
+                <p id="para-course-1" class="para-course-1 para-custom">
                     <?= $course['course_text'] ?>
                 </p>
                 <div class="img-inside-container mt-4">
@@ -35,7 +35,7 @@ $course = getSingleCourse($course_id);
                 </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>
-                <p class="para-course-2 para-custom">
+                <p id="para-course-1" class="para-course-2 para-custom">
                 <?= $course['course_text_2'] ?>
                 </p>
 

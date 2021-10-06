@@ -1,6 +1,5 @@
 <?php include_once 'header.php' ?>
 
-
 <section id="homepage">
     <!-- <div class="motif-background-container w-100">
         <img src="src/motifs-angle-layout.png" alt="motif" class="w-100">
@@ -24,6 +23,5 @@
         </div>
     </main>
 </section>
-
 
 <?php include_once 'footer.php' ?>

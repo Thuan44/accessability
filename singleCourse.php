@@ -1,4 +1,9 @@
-<?php include_once 'header.php' ?>
+<?php 
+
+include_once 'header.php';
+$user_id = $_SESSION['user_id'];
+
+?>
 
 
 <section id="single_course">

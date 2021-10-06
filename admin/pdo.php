@@ -4,7 +4,7 @@
   //  Local
    define("PDO_DBBASE", "accessability");
    define("PDO_USER", "root");
-   define("PDO_PW", "root");
+   define("PDO_PW", "");
 
   //  Live
   //  define("PDO_DBBASE", "");

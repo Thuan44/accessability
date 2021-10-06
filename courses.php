@@ -1,16 +1,13 @@
 <?php
-
 include_once 'header.php';
-$user_id = $_GET["id"];
 
 $listCourses = listCourses();
-$listCoursesById = listCoursesById($user_id);
+$listCoursesById = listCoursesById($_SESSION['user_id']);
 
 ?>
 
 <div class="course-bar">
-
-
+    
     <div class="mx-auto"> Bonjour <?= @$_SESSION["user_firstname"] ?></div>
 
 </div>

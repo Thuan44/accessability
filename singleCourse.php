@@ -1,5 +1,14 @@
 <?php include_once 'header.php' ?>
 
+<?php 
+$course_id = $_GET['id'];
+
+
+echo "<pre>";
+print_r(getSingleCourse($course_id));
+echo "</pre>";
+?>
+
 
 <section id="single_course">
     <div class="container">
@@ -16,7 +25,7 @@
                     </video> -->
             </div>
             <div class="inside-container">
-                <h3 class="course-subtitle-custom mb-2">Vérifiez la provenance de l’API pour éviter les mauvaises surprises</h3>
+                <h3 class="course-subtitle-custom mb-2 mt-4">Vérifiez la provenance de l’API pour éviter les mauvaises surprises</h3>
                 <hr>
                 <p class="para-course-1">
                     Vous souhaitez créer une boutique en ligne ? Vous avez trouvé une super API qui permet de gérer le paiement en ligne, mais avez-vous pensé à vérifier sa fiabilité ?
@@ -29,11 +38,19 @@
                 <div class="img-inside-container">
                     <img src="src/code.png" alt="Image code" class="w-100 mb-4 shadow-sm">
                 </div>
+                <h3 class="course-subtitle-custom mb-2 mt-4">Deuxième sous-titre</h3>
+                <hr>
                 <p class="para-course-2">
                     Top ! Vous devez maintenant tester l'API avant de l'utiliser dans votre programme informatique.
 
                     Il ne vous reste qu'à installer le logiciel Postman et à le configurer, comme vous allez le voir dans cette vidéo de démonstration :
                 </p>
+
+                <h3 class="course-subtitle-custom mb-2 mt-4">La programmation éthique (version audio)</h3>
+                <hr>
+                <div class="podcast w-100">
+                    <iframe src="https://open.spotify.com/embed/track/2XeZi7qwChzLOt32tsoPXV" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
+                </div>
             </div>
         </main>
     </div>

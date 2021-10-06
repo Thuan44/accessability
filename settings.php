@@ -49,7 +49,6 @@ if (isset($_POST['submit_update_db'])) {
             value="<?php echo $row['user_fontsize']; ?>"> </p>
     <p> Couleur de la police : <input id="fontcolor" type="text" name="fontcolor"
             value="<?php echo $row['user_fontcolor']; ?>"> </p>
-
     <p> Couleur élément 1 : <input id="element1color" type="text" name="element1color"
             value="<?php echo $row['user_eltcolor_1']; ?>"></p>
     <p> Couleur élément 2 : <input id="element2color" type="text" name="element2color"

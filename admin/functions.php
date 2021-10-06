@@ -56,7 +56,7 @@ function signUp($userEmail, $userPassword)
 }
 
 //Update Database
-function updateDB($fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
+function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
 {
 
     global $connection;
@@ -73,7 +73,7 @@ function updateDB($fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bg
      WHERE user_id = '".$user_id."' ";
     $result = $connection->query($query);
 
-    header('Location: settings.php');
+    header('Location: preferences.php');
 }
 
 function listCourses()

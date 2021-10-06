@@ -13,6 +13,8 @@ function login($userEmail, $userPassword)
 
     if ($data) {
         $_SESSION['user_id'] = $data['user_id'];
+        $_SESSION['user_lastname'] = $data['user_lastname'];
+        $_SESSION['user_firstname'] = $data['user_firstname'];
         $_SESSION['user_email'] = $data['user_email'];
         $_SESSION['user_password'] = $data['user_password'];
         $_SESSION['user_role'] = $data['user_role'];
@@ -25,7 +27,7 @@ function login($userEmail, $userPassword)
             }
             // Visitor
             if ($_SESSION['user_role'] == 1) {
-                header('Location: ./index.php');
+                header('Location: ./courses.php?user_id='. $_SESSION['user_id']);
             }
         } else {
             echo "Connexion echouée";
@@ -51,4 +53,41 @@ function signUp($userEmail, $userPassword)
     ));
 
     header('Location: login.php');
+}
+
+
+function listCourses()
+{
+    global $connection;
+    $select = "SELECT * FROM courses";
+    $request = $connection->prepare($select);
+    $request->execute();
+    return $request->fetchAll();
+}
+
+function listCoursesById($id)
+{
+    global $connection;
+    $select = "SELECT * FROM users_courses WHERE user_id=?";
+    $request = $connection->prepare($select);
+    $request->execute(
+        array(
+            $id
+        )
+    );
+    return $request->fetchAll();
+}
+
+// Get single course
+function getSingleCourse($course_id)
+{
+    global $connection;
+    $select = "SELECT * FROM courses WHERE course_id=?";
+    $request = $connection->prepare($select);
+    $request->execute(
+        array(
+            $course_id
+        )
+    );
+    return $request->fetch();
 }

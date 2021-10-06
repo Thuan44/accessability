@@ -143,15 +143,6 @@ h3.login-title::first-letter {
   width: 90%;
 }
 
-/*
-* singleCourse
-*/
-#single_course h1 {
-  color: #505050;
-  font-size: 3rem;
-  font-weight: 800;
-}
-
 .btn-authentication {
   width: 150px !important;
   background: #fdce37;
@@ -165,8 +156,21 @@ h3.login-title::first-letter {
   border: 2px solid #fdce37;
 }
 
+/*
+* singleCourse
+*/
+#single_course h1 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
 .inside-container {
   padding: 0 120px 0;
+}
+
+.btn-retour-cours {
+  border: 2px solid #fdce37;
 }
 
 /*
@@ -185,11 +189,18 @@ h3.login-title::first-letter {
 
 .course_items {
   text-align: center;
-}
-
-.course-bar {
-  height: 100px;
+  height: 50px;
   color: #efeef3;
   background-color: #271549;
+}
+
+.card-body {
+  color: black !important;
+}
+
+.card-img-top {
+  text-align: center;
+  height: 150px;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

@@ -27,7 +27,7 @@ function login($userEmail, $userPassword)
             }
             // Visitor
             if ($_SESSION['user_role'] == 1) {
-                header('Location: ./courses.php?id='. $_SESSION['user_id']);
+                header('Location: ./courses.php?user_id='. $_SESSION['user_id']);
             }
         } else {
             echo "Connexion echouée";

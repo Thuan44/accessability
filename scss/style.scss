@@ -145,18 +145,6 @@ h3.login-title {
     width: 90%;
 }
 
-
-/*
-* singleCourse
-*/
-#single_course {
-    h1 {
-        color: $dark-gray;
-        font-size: 3rem;
-        font-weight: 800;
-    }
-}
-
 .btn-authentication {
     width: 150px !important;
     background: $secondary-color;
@@ -169,9 +157,26 @@ h3.login-title {
     }
 }
 
+
+/*
+* singleCourse
+*/
+#single_course {
+    h1 {
+        color: $dark-gray;
+        font-size: 3rem;
+        font-weight: 800;
+    }
+}
+
 .inside-container{
     padding: 0 120px 0;
 }
+
+.btn-retour-cours{
+    border: 2px solid $secondary-color;
+}
+
 
 
 /*
@@ -189,10 +194,15 @@ h3.login-title {
 
 .course_items {
     text-align: center;
-}
-
-.course-bar {
-    height: 100px;
+    height: 50px;
     color: $light-gray;
     background-color: $primary-color;
+}
+.card-body{
+    color : black !important
+}
+.card-img-top {
+    text-align: center;
+    height: 150px;
+    width: 100%;
 }

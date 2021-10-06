@@ -77,3 +77,17 @@ function listCoursesById($id)
     );
     return $request->fetchAll();
 }
+
+// Get single course
+function getSingleCourse($course_id)
+{
+    global $connection;
+    $select = "SELECT * FROM courses WHERE course_id=?";
+    $request = $connection->prepare($select);
+    $request->execute(
+        array(
+            $course_id
+        )
+    );
+    return $request->fetch();
+}

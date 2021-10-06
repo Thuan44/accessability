@@ -145,6 +145,18 @@ h3.login-title {
     width: 90%;
 }
 
+.btn-authentication {
+    width: 150px !important;
+    background: $secondary-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    &:hover {
+        background: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+    }
+}
+
 
 /*
 * singleCourse
@@ -157,17 +169,14 @@ h3.login-title {
     }
 }
 
-.btn-authentication {
-    width: 150px !important;
-    background: $secondary-color;
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    &:hover {
-        background: $primary-color;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
-    }
+.inside-container{
+    padding: 0 120px 0;
 }
+
+.btn-retour-cours{
+    border: 2px solid $secondary-color;
+}
+
 
 
 /*
@@ -196,31 +205,4 @@ h3.login-title {
     text-align: center;
     height: 150px;
     width: 100%;
-}
-
-h1 {
-    color: $light-gray;
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-#home_main_content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-}
-
-.btn-authentication {
-    width: 150px !important;
-    background: $secondary-color;
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    &:hover {
-        background: $primary-color;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
-    }
 }

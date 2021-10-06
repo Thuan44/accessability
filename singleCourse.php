@@ -1,7 +1,10 @@
-<?php 
+<?php
 
 include_once 'header.php';
 $user_id = $_SESSION['user_id'];
+$course_id = $_GET['id'];
+
+$course = getSingleCourse($course_id);
 
 ?>
 
@@ -9,29 +12,41 @@ $user_id = $_SESSION['user_id'];
 <section id="single_course">
     <div class="container">
         <main id="single_course_main_content" class="main-container">
-            <a href="courses.php" class="btn btn-primary w-100 btn-action-custom mb-4">RETOUR AUX COURS</a>
+            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
 
-            <h1 id="course_title_custom" class="text-center mb-2">Utilisez une API en toute sécurité</h1>
+            <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
+            <hr>
             <div class="iframe-container mb-4">
                 <iframe width="100%" height="500" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 </iframe>
-                    <!-- <video width="100%" height="500" controls>
+                <!-- <video width="100%" height="500" controls>
                         <source src="https://www.youtube.com/embed/tgbNymZ7vqY">
                         Your browser does not support the video tag.
                     </video> -->
             </div>
-            <h3 class="course-subtitle-custom">Vérifiez la provenance de l’API pour éviter les mauvaises surprises</h3>
-            <p>
-                Vous souhaitez créer une boutique en ligne ? Vous avez trouvé une super API qui permet de gérer le paiement en ligne, mais avez-vous pensé à vérifier sa fiabilité ?
-            </p>
+            <div class="inside-container">
+                <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_1'] ?></h3>
+                <hr>
+                <p class="para-course-1 para-custom">
+                    <?= $course['course_text'] ?>
+                </p>
+                <div class="img-inside-container mt-4">
+                    <img src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
+                </div>
+                <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
+                <hr>
+                <p class="para-course-2 para-custom">
+                <?= $course['course_text_2'] ?>
+                </p>
 
-            <p>
-                En effet, il est possible qu'une API, bien que très alléchante, soit une arnaque ! :diable: Dans le cas de votre boutique en ligne, cela peut avoir des conséquences catastrophiques si les données bancaires de vos utilisateurs sont copiées au moment du paiement ! Vous serez tenu pour responsable !
+                <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
+                <hr>
+                <div class="podcast w-100">
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
+                </div>
+            </div>
 
-                Préférez des API certifiées ou sécurisées. Au besoin, achetez une API si vous n'avez pas le temps d'en créer une !
-
-                Par exemple, la société CDiscount met à disposition une API pour s'inscrire sur sa marketplace. Cette API est fiable et sécurisée, car elle est utilisée par l'entreprise elle-même.
-            </p>
+            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
         </main>
     </div>
 </section>

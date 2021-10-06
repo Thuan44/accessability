@@ -2,9 +2,9 @@
 include_once 'header.php';
 $user_id = $_SESSION['user_id'];
 
-if (@$_POST['add']) {
-    setCourseInDB($course_id);
-}
+// if (@$_POST['add']) {
+//     setCourseInDB($course_id);
+// }
 
 $listCourses = listCourses();
 $listCoursesById = listCoursesById($user_id);

@@ -18,6 +18,15 @@ h1 {
   text-shadow: 1px 1px 2px #777;
 }
 
+h2 {
+  color: #271549;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px #777;
+  margin-bottom: 50px;
+}
+
 h3 {
   color: #505050;
   text-transform: lowercase;
@@ -30,11 +39,23 @@ h3::first-letter {
   text-transform: uppercase;
 }
 
+h4 {
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+}
+
 .small-divider {
   height: 1px;
   width: 20px;
   background-color: rgba(50, 50, 50, 0.2);
   margin: 10px auto 5px;
+}
+
+.big-divider {
+  height: 5px;
+  width: 50px;
+  background-color: #fdce37;
+  margin-bottom: 20px;
 }
 
 .main-container {
@@ -166,7 +187,7 @@ h3::first-letter {
 }
 
 #homepage p {
-  font-size: 1.2rem;
+  font-size: 1.2rem !important;
 }
 
 #home_main_content {
@@ -176,6 +197,12 @@ h3::first-letter {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 90%;
+}
+
+.slogan::before {
+  content: 'La plateforme d\'apprentissage';
+  background-color: #fdce37;
+  color: #271549;
 }
 
 .btn-authentication {
@@ -195,6 +222,54 @@ h3::first-letter {
 
 .btn-logged-user {
   width: 200px !important;
+}
+
+#anchor-accessibility {
+  position: absolute;
+  bottom: 10px;
+  right: 190px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #efeef3;
+  text-decoration: none;
+}
+
+#anchor-partnership {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #efeef3;
+  text-decoration: none;
+}
+
+#accessibility {
+  color: #271549 !important;
+}
+
+#accessibility p, #accessibility ul {
+  font-size: 1.2rem;
+}
+
+#accessibility .accessibility-title::before {
+  content: 'A';
+  background-color: #fdce37;
+}
+
+#haut-de-page {
+  color: #271549;
+  font-size: 2rem;
+  margin: 50px 0;
+}
+
+#partnership {
+  margin-top: 100px !important;
+}
+
+#partnership .partnership-title::before {
+  content: 'Ils';
+  background-color: #fdce37;
 }
 
 /*

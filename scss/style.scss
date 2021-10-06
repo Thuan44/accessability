@@ -23,6 +23,16 @@ h1 {
     text-shadow: 1px 1px 2px #777;
 }
 
+h2{
+    color: $primary-color;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 1px 1px 2px #777;
+    margin-bottom: 50px;
+
+}
+
 h3 {
     color: $dark-gray;
     text-transform: lowercase;
@@ -34,11 +44,22 @@ h3 {
     color: $dark-gray;
 }
 
+h4{
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+}
 .small-divider {
     height: 1px;
     width: 20px;
     background-color: rgba(50, 50, 50, 0.2);
     margin: 10px auto 5px;
+}
+
+.big-divider{
+    height: 5px;
+    width: 50px;
+    background-color: #fdce37;
+    margin-bottom: 20px;
 }
 
 .main-container {
@@ -139,6 +160,7 @@ h3 {
     font-size: 1.1rem;
 }
 
+
 /*
 * Homepage
 */
@@ -153,8 +175,8 @@ h3 {
     }
 
     p {
-        font-size: 1.2rem;
-    }
+        font-size: 1.2rem !important;
+    }  
 }
 
 #home_main_content {
@@ -163,6 +185,12 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
+}
+
+.slogan::before{
+    content: 'La plateforme d\'apprentissage';
+    background-color: $secondary-color;
+    color: $primary-color;
 }
 
 .btn-authentication {
@@ -182,6 +210,55 @@ h3 {
 .btn-logged-user {
     width: 200px !important;
 }
+
+#anchor-accessibility{
+    position: absolute;
+    bottom: 10px;
+    right: 190px;
+    transform: translate(-50%, -50%);
+
+    color: $light-gray;
+    text-decoration: none;
+}
+
+#anchor-partnership{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    transform: translate(-50%, -50%);
+
+    color: $light-gray;
+    text-decoration: none;
+}
+
+#accessibility{
+    color: $primary-color !important;
+
+     p, ul {
+        font-size: 1.2rem;
+     }
+
+     .accessibility-title::before{
+         content: 'A';
+         background-color: $secondary-color;
+     }
+}
+
+#haut-de-page{
+    color: $primary-color;
+    font-size: 2rem;
+    margin: 50px 0;
+}
+
+#partnership{
+    margin-top: 100px !important;
+
+    .partnership-title::before{
+        content: 'Ils';
+        background-color: $secondary-color;
+    }
+}
+
 
 /*
 * singleCourse

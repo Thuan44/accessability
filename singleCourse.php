@@ -1,6 +1,12 @@
 <?php
 
 include_once 'header.php';
+
+// If user is not connected
+if(!isset($_SESSION['user_id'])){
+    header('Location: index.php');
+}
+
 $user_id = $_SESSION['user_id'];
 $course_id = $_GET['id'];
 
@@ -32,6 +38,10 @@ if(!is_null($_SESSION['user_fontsize'])){
 if(!is_null($_SESSION['user_fontcolor'])){
     echo "<style type='text/css'>
         #single_course p {
+            color: " . $_SESSION['user_fontcolor'] . ";  
+        }
+
+        #single_course h1, #single_course h3 {
             color: " . $_SESSION['user_fontcolor'] . ";  
         }
         </style>";

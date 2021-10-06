@@ -1,5 +1,11 @@
 <?php
 include_once 'header.php';
+
+// If user is not connected
+if(!isset($_SESSION['user_id'])){
+    header('Location: index.php');
+}
+
 $user_id = $_SESSION['user_id'];
 
 // if (@$_POST['add']) {

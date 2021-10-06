@@ -24,7 +24,8 @@ if (isset($_POST['submit_signup'])) {
             <div class="login-right">
                 <div class="login-form d-flex justify-content-center align-items-center h-100 flex-column">
                     <h3 class="login-title text-center mb-2">Access<span class="text-uppercase">A</span>bility</h3>
-                    <p class="signup-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes malvoyantes</p>
+                    <p class="signup-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes
+                        malvoyantes</p>
                     <div class="form-container rounded p-5">
                         <form class="form" action="#" method="POST">
                             <h4 class="text-center mb-3 signup-title">Créer un compte</h4>
@@ -39,7 +40,8 @@ if (isset($_POST['submit_signup'])) {
                             <button type="submit" name="submit_signup" class="btn w-100 login-btn rounded text-white mb-3">Créer compte</button>
                         </form>
                         <div class="signup-group mx-auto text-center">
-                            <a href="/accessability/login.php" class="text-decoration-none"><i class="fas fa-arrow-left"></i> Se connecter</a>
+                            <a href="/accessability/login.php" class="text-decoration-none"><i
+                                    class="fas fa-arrow-left"></i> Se connecter</a>
                         </div>
                     </div>
                 </div>

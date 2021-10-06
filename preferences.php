@@ -1,14 +1,5 @@
 <?php include_once 'header.php' ?>
 
-<?php
-if (isset($_POST['submit-preferences'])) {
-
-  echo "<pre>";
-  print_r($_POST);
-  echo "</pre>";
-}
-?>
-
 <form action="#" method="POST">
   <div class="preferencestexte">
 

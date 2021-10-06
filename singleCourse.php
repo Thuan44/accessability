@@ -6,9 +6,83 @@ $course_id = $_GET['id'];
 
 $course = getSingleCourse($course_id);
 
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
+
+//===== CHANGE STYLE ACCORDING TO USER PREFERENCES =====//
+
+// Font-family
+if(!is_null($_SESSION['user_fontfamily'])){
+    echo "<style type='text/css'>
+        #single_course {
+            font-family: " . $_SESSION['user_fontfamily'] . ";  
+        }
+        </style>";
+}
+
+// Font-size
+if(!is_null($_SESSION['user_fontsize'])){
+    echo "<style type='text/css'>
+        #single_course p {
+            font-size: " . $_SESSION['user_fontsize'] . "px;  
+        }
+        </style>";
+}
+
+// Font color
+if(!is_null($_SESSION['user_fontcolor'])){
+    echo "<style type='text/css'>
+        #single_course p {
+            color: " . $_SESSION['user_fontcolor'] . ";  
+        }
+        </style>";
+}
+
+// Link and title color
+if(!is_null($_SESSION['user_eltcolor_1'])){
+    echo "<style type='text/css'>
+        #single_course h1, #single_course h3{
+            color: " . $_SESSION['user_eltcolor_1'] . ";  
+        }
+        </style>";
+}
+
+// Button color
+if(!is_null($_SESSION['user_eltcolor_2'])){
+    echo "<style type='text/css'>
+        #single_course a{
+            background: " . $_SESSION['user_eltcolor_2'] . ";
+            color: #fff;
+        }
+        </style>";
+}
+
+// Error color
+if(!is_null($_SESSION['user_eltcolor_3'])){
+    echo "<style type='text/css'>
+        #single_course a{
+            color: " . $_SESSION['user_eltcolor_3'] . ";
+        }
+        </style>";
+}
+
+// Error color
+if(!is_null($_SESSION['user_eltcolor_3'])){
+    echo "<style type='text/css'>
+        #single_course a{
+            color: " . $_SESSION['user_eltcolor_3'] . ";
+        }
+        </style>";
+}
+
+// Background color
+if(!is_null($_SESSION['user_bgcolor'])){
+    echo "<style type='text/css'>
+        #single_course {
+            background: " . $_SESSION['user_bgcolor'] . ";
+        }
+        </style>";
+}
+
+//===== END STYLE CHANGES =====//
 
 ?>
 
@@ -35,7 +109,7 @@ echo "</pre>";
                 </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>
-                <p id="para-course-1" class="para-course-2 para-custom">
+                <p id="para-course-2" class="para-course-2 para-custom">
                 <?= $course['course_text_2'] ?>
                 </p>
 

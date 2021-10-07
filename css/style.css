@@ -298,6 +298,21 @@ h4 {
   border: 2px solid #fdce37;
 }
 
+.btn-retour-cours {
+  width: 250px !important;
+  padding: 10px !important;
+  font-size: 1.2rem !important;
+  background: #fdce37 !important;
+  color: #271549 !important;
+  border: 2px solid #271549 !important;
+}
+
+.btn-retour-cours:hover {
+  background: #271549 !important;
+  color: #fdce37 !important;
+  border: 2px solid #fdce37 !important;
+}
+
 /*
 * Courses
 */

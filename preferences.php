@@ -24,6 +24,7 @@ if (isset($_POST['submit_update_db'])) {
     updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor, $linespace);
 }
 ?>
+
 <?php
 global $connection;
 $user_id = $_SESSION['user_id'];
@@ -68,6 +69,12 @@ $result = $connection->query($query);
 $elt3color_array = $result->fetch();
 $elt3color_radio = $elt3color_array[0];
 ?>
+
+<?php 
+    $user_id = $_SESSION['user_id'];
+    updateSessionPreferences($user_id);
+?>
+
 <div id="pref" class="container-fluid">
     <div class="row">
         <div class="col-md-2" style="background-color:#271549;">
@@ -102,51 +109,77 @@ $elt3color_radio = $elt3color_array[0];
                             <label style="font-weight: bold; color:#271549" for="FontName">Choisissez une police
                                 :</label>
 
-                            <p><input aria-label="Police normale" class="form-check-input" name="FontName" type="radio" value="Normale" <?php echo ($fontname_radio == 'Normale') ? 'checked' : '' ?>>
+                            <p><input aria-label="Police normale" class="form-check-input" name="FontName" type="radio"
+                                    value="Normale" <?php echo ($fontname_radio == 'Normale') ? 'checked' : '' ?>>
                                 Normale</input>
-                                <input aria-label="Police Luciole" class="form-check-input" name="FontName" type="radio" value="Luciole" <?php echo ($fontname_radio == 'Luciole') ? 'checked' : '' ?>>
+                                <input aria-label="Police Luciole" class="form-check-input" name="FontName" type="radio"
+                                    value="Luciole" <?php echo ($fontname_radio == 'Luciole') ? 'checked' : '' ?>>
                                 Luciole</input>
-                                <input aria-label="Police normale" class="form-check-input" name="FontName" type="radio" value="Arial" <?php echo ($fontname_radio == 'Arial') ? 'checked' : '' ?>>
+                                <input aria-label="Police normale" class="form-check-input" name="FontName" type="radio"
+                                    value="Arial" <?php echo ($fontname_radio == 'Arial') ? 'checked' : '' ?>>
                                 Arial</input>
                             </p>
 
-                            <label for="FontSize">Choisissez une taille de police :</label>
+                            <label style="font-weight: bold; color:#271549" for="FontSize">Choisissez une taille de
+                                police :</label>
 
-                            <p><input class="form-check-input" name="FontSize" type="radio" value="16" <?php echo ($fontsize_radio == '16') ? 'checked' : '' ?>> Petite</input>
-                                <input class="form-check-input" name="FontSize" type="radio" value="22" <?php echo ($fontsize_radio == '22') ? 'checked' : '' ?>> Moyenne</input>
-                                <input class="form-check-input" name="FontSize" type="radio" value="27" <?php echo ($fontsize_radio == '27') ? 'checked' : '' ?>> Grande</input>
-                                <input class="form-check-input" name="FontSize" type="radio" value="32" <?php echo ($fontsize_radio == '32') ? 'checked' : '' ?>> Très grande</input>
+                            <p><input class="form-check-input" name="FontSize" type="radio" value="16"
+                                    <?php echo ($fontsize_radio == '16') ? 'checked' : '' ?>> Petite</input>
+                                <input class="form-check-input" name="FontSize" type="radio" value="22"
+                                    <?php echo ($fontsize_radio == '22') ? 'checked' : '' ?>> Moyenne</input>
+                                <input class="form-check-input" name="FontSize" type="radio" value="27"
+                                    <?php echo ($fontsize_radio == '27') ? 'checked' : '' ?>> Grande</input>
+                                <input class="form-check-input" name="FontSize" type="radio" value="32"
+                                    <?php echo ($fontsize_radio == '32') ? 'checked' : '' ?>> Très grande</input>
                             </p>
 
-                            <label for="LineHeight">Choisissez l'espace entre les lignes :</label>
+                            <label style="font-weight: bold; color:#271549" for="LineHeight">Choisissez l'espace entre
+                                les lignes :</label>
 
-                            <p><input class="form-check-input" name="LineHeight" type="radio" value="115" <?php echo ($linespace_radio == '115') ? 'checked' : '' ?>>
+                            <p><input class="form-check-input" name="LineHeight" type="radio" value="115"
+                                    <?php echo ($linespace_radio == '115') ? 'checked' : '' ?>>
                                 Normal</input>
-                                <input class="form-check-input" name="LineHeight" type="radio" value="165" <?php echo ($linespace_radio == '165') ? 'checked' : '' ?>>
+                                <input class="form-check-input" name="LineHeight" type="radio" value="165"
+                                    <?php echo ($linespace_radio == '165') ? 'checked' : '' ?>>
                                 Moyen</input>
-                                <input class="form-check-input" name="LineHeight" type="radio" value="215" <?php echo ($linespace_radio == '215') ? 'checked' : '' ?>>
+                                <input class="form-check-input" name="LineHeight" type="radio" value="215"
+                                    <?php echo ($linespace_radio == '215') ? 'checked' : '' ?>>
                                 Grand</input>
                             </p>
 
-                            <label for="BackgroundColor">Choisissez la couleur de fond de la page :</label>
+                            <label style="font-weight: bold; color:#271549" for="BackgroundColor">Choisissez la couleur
+                                de fond de la page :</label>
 
-                            <p><input class="form-check-input" name="BackgroundColor" type="radio" value="#ffffff" <?php echo ($bgcolor_radio == '#ffffff') ? 'checked' : '' ?>> Blanc</input>
-                                <input class="form-check-input" name="BackgroundColor" type="radio" value="#000000" <?php echo ($bgcolor_radio == '#000000') ? 'checked' : '' ?>> Noir</input>
-                                <input class="form-check-input" name="BackgroundColor" type="radio" value="#ffcc99" <?php echo ($bgcolor_radio == '#ffcc99') ? 'checked' : '' ?>> Sable</input>
+                            <p><input class="form-check-input" name="BackgroundColor" type="radio" value="#ffffff"
+                                    <?php echo ($bgcolor_radio == '#ffffff') ? 'checked' : '' ?>> Blanc</input>
+                                <input class="form-check-input" name="BackgroundColor" type="radio" value="#000000"
+                                    <?php echo ($bgcolor_radio == '#000000') ? 'checked' : '' ?>> Noir</input>
+                                <input class="form-check-input" name="BackgroundColor" type="radio" value="#ffcc99"
+                                    <?php echo ($bgcolor_radio == '#ffcc99') ? 'checked' : '' ?>> Sable</input>
                             </p>
 
-                            <label for="FontColor">Choisissez la couleur de la police :</label>
+                            <label style="font-weight: bold; color:#271549" for="FontColor">Choisissez la couleur de la
+                                police :</label>
                             <p>
-                                <input class="form-check-input" name="FontColor" type="radio" value="#ffffff" <?php echo ($fontcolor_radio == '#ffffff') ? 'checked' : '' ?>> Blanc</input>
-                                <input class="form-check-input" name="FontColor" type="radio" value="#000000" <?php echo ($fontcolor_radio == '#000000') ? 'checked' : '' ?>> Noir</input>
-                                <input class="form-check-input" name="FontColor" type="radio" value="#ffff00" <?php echo ($fontcolor_radio == '#ffff00') ? 'checked' : '' ?>> Jaune</input>
-                                <input class="form-check-input" name="FontColor" type="radio" value="#ffcc99" <?php echo ($fontcolor_radio == '#ffcc99') ? 'checked' : '' ?>> Beige</input>
+                                <input class="form-check-input" name="FontColor" type="radio" value="#ffffff"
+                                    <?php echo ($fontcolor_radio == '#ffffff') ? 'checked' : '' ?>> Blanc</input>
+                                <input class="form-check-input" name="FontColor" type="radio" value="#000000"
+                                    <?php echo ($fontcolor_radio == '#000000') ? 'checked' : '' ?>> Noir</input>
+                                <input class="form-check-input" name="FontColor" type="radio" value="#ffff00"
+                                    <?php echo ($fontcolor_radio == '#ffff00') ? 'checked' : '' ?>> Jaune</input>
+                                <input class="form-check-input" name="FontColor" type="radio" value="#ffcc99"
+                                    <?php echo ($fontcolor_radio == '#ffcc99') ? 'checked' : '' ?>> Beige</input>
                             </p>
 
                             <div class="my-4 demo-text-container">
                                 <fieldset class="shadow-sm">
                                     <legend class="w-25">Exemple de texte</legend>
-                                    <p class="ExemplePreferences p-5 mb-0">Commençons par les variables, notion
+                                    <p style="font-family: <?php echo $_SESSION['user_fontfamily'] ?>; 
+                                            font-size: <?php echo $_SESSION['user_fontsize'] ?>px;
+                                            color: <?php echo $_SESSION['user_fontcolor'] ?>;
+                                            line-height: <?php echo $_SESSION['user_linespace'] ?>%;
+                                            background-color: <?php echo $_SESSION['user_bgcolor'] ?>"
+                                        class="ExemplePreferences p-5 mb-0">Commençons par les variables, notion
                                         fondamentale
                                         en
                                         développement.
@@ -156,7 +189,8 @@ $elt3color_radio = $elt3color_array[0];
                                         données.
                                         Plus
                                         précisément,
-                                        une variable est un conteneur utilisé pour stocker un élément de données dont votre
+                                        une variable est un conteneur utilisé pour stocker un élément de données dont
+                                        votre
                                         programme
                                         pourrait
                                         avoir
@@ -173,22 +207,36 @@ $elt3color_radio = $elt3color_array[0];
 
                             <div class="PremiersBoutonsDAltonisme">
                                 <p>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#ff0000" <?php echo ($elt1color_radio == '#ff0000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#ff0000" <?php echo ($elt1color_radio == '#ff0000') ? 'checked' : '' ?>>
                                     Rouge</input>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#ffff00" <?php echo ($elt1color_radio == '#ffff00') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#ffff00" <?php echo ($elt1color_radio == '#ffff00') ? 'checked' : '' ?>>
                                     Jaune</input>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#008000" <?php echo ($elt1color_radio == '#008000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#008000" <?php echo ($elt1color_radio == '#008000') ? 'checked' : '' ?>>
                                     Vert</input>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#00FFFF" <?php echo ($elt1color_radio == '#00FFFF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#00FFFF" <?php echo ($elt1color_radio == '#00FFFF') ? 'checked' : '' ?>>
                                     Cyan</input>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#0000FF" <?php echo ($elt1color_radio == '#0000FF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#0000FF" <?php echo ($elt1color_radio == '#0000FF') ? 'checked' : '' ?>>
                                     Bleu</input>
-                                    <input class="form-check-input" name="FirstHighlightColor" type="radio" value="#800080" <?php echo ($elt1color_radio == '#800080') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="FirstHighlightColor" type="radio"
+                                        value="#800080" <?php echo ($elt1color_radio == '#800080') ? 'checked' : '' ?>>
                                     Violet</input>
                                 </p>
                             </div>
 
+                            <p> <a style="font-family: <?php echo $_SESSION['user_fontfamily'] ?>; 
+                                            font-size: <?php echo $_SESSION['user_fontsize'] ?>px;
+                                            color: <?php echo $_SESSION['user_eltcolor_1'] ?>;
+                                            background-color: <?php echo $_SESSION['user_bgcolor'] ?>;"
+                                    class="FirstColor" href="" for="FirstHighlightColor">Exemple de lien cliquable
+                                    :</a>
+
                             <p><a class="FirstColor" href="" for="FirstHighlightColor">Exemple de lien cliquable</a>
+
                             </p>
 
                             <label style="font-weight: bold; color:#271549" for="SecondHighlightColor">Choisissez la
@@ -199,22 +247,30 @@ $elt3color_radio = $elt3color_array[0];
 
                             <div class="DeuxiemesBoutonsDAltonisme">
                                 <p>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#ff0000" <?php echo ($elt2color_radio == '#ff0000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#ff0000" <?php echo ($elt2color_radio == '#ff0000') ? 'checked' : '' ?>>
                                     Rouge</input>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#ffff00" <?php echo ($elt2color_radio == '#ffff00') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#ffff00" <?php echo ($elt2color_radio == '#ffff00') ? 'checked' : '' ?>>
                                     Jaune</input>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#008000" <?php echo ($elt2color_radio == '#008000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#008000" <?php echo ($elt2color_radio == '#008000') ? 'checked' : '' ?>>
                                     Vert</input>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#00FFFF" <?php echo ($elt2color_radio == '#00FFFF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#00FFFF" <?php echo ($elt2color_radio == '#00FFFF') ? 'checked' : '' ?>>
                                     Cyan</input>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#0000FF" <?php echo ($elt2color_radio == '#0000FF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#0000FF" <?php echo ($elt2color_radio == '#0000FF') ? 'checked' : '' ?>>
                                     Bleu</input>
-                                    <input class="form-check-input" name="SecondHighlightColor" type="radio" value="#800080" <?php echo ($elt2color_radio == '#800080') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="SecondHighlightColor" type="radio"
+                                        value="#800080" <?php echo ($elt2color_radio == '#800080') ? 'checked' : '' ?>>
                                     Violet</input>
                                 </p>
                             </div>
 
-                            <p><input type="button" class="Demoinput btn btn-outline-primary" for="SecondHighlightColor" value="Bouton Exemple">
+                            <p><input style="background-color: <?php echo $_SESSION['user_eltcolor_2'] ?>" type="button"
+                                    class="Demoinput btn btn-outline-primary" for="SecondHighlightColor"
+                                    value="Bouton Exemple">
                             </p>
 
                             <label style="font-weight: bold; color:#271549" for="SecondHighlightColor">Choisissez la
@@ -225,22 +281,31 @@ $elt3color_radio = $elt3color_array[0];
 
                             <div class="TroisiemesBoutonsDAltonisme">
                                 <p>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#ff0000" <?php echo ($elt3color_radio == '#ff0000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#ff0000" <?php echo ($elt3color_radio == '#ff0000') ? 'checked' : '' ?>>
                                     Rouge</input>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#ffff00" <?php echo ($elt3color_radio == '#ffff00') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#ffff00" <?php echo ($elt3color_radio == '#ffff00') ? 'checked' : '' ?>>
                                     Jaune</input>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#008000" <?php echo ($elt3color_radio == '#008000') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#008000" <?php echo ($elt3color_radio == '#008000') ? 'checked' : '' ?>>
                                     Vert</input>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#00FFFF" <?php echo ($elt3color_radio == '#00FFFF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#00FFFF" <?php echo ($elt3color_radio == '#00FFFF') ? 'checked' : '' ?>>
                                     Cyan</input>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#0000FF" <?php echo ($elt3color_radio == '#0000FF') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#0000FF" <?php echo ($elt3color_radio == '#0000FF') ? 'checked' : '' ?>>
                                     Bleu</input>
-                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio" value="#800080" <?php echo ($elt3color_radio == '#800080') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" name="ThirdHighlightColor" type="radio"
+                                        value="#800080" <?php echo ($elt3color_radio == '#800080') ? 'checked' : '' ?>>
                                     Violet</input>
                                 </p>
                             </div>
-
-                            <p><a class="DemoError" for="ThirdHighlightColor">Exception in thread "main"</a></p>
+                            <p><a style="text-decoration:<?php echo $_SESSION['user_eltcolor_3'] ?> wavy underline;"
+                                    class="DemoError" for="ThirdHighlightColor">Exception in
+                                    thread
+                                    "main"</a>
+                            </p>
 
                             <input type="submit" class="btn btn-outline-primary" name="submit_update_db">
                         </form>

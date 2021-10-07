@@ -86,7 +86,7 @@ $(document).ready(function () {
                 break;
             case "Normale":
                 $(".ExemplePreferences").css('font-family', "");
-                $("p").css('font-family', "");
+                //$("p").css('font-family', "");
                 break;
         }
     });

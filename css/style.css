@@ -396,6 +396,20 @@ h4 {
 /*
 * Preferences
 */
+.pref-logo-container {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px !important;
+}
+
+.btn-authentication {
+  width: 200px !important;
+  background: #fdce37;
+}
+
 .demo-text-container {
   margin-top: 50px !important;
 }

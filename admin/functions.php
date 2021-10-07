@@ -56,7 +56,7 @@ function signUp($userEmail, $userPassword)
 }
 
 //Update Database
-function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
+function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor, $linespace)
 {
 
     global $connection;
@@ -69,7 +69,8 @@ function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $elt
                                 user_eltcolor_1	= '".$eltcolor1."',
                                 user_eltcolor_2	= '".$eltcolor2."',
                                 user_eltcolor_3	= '".$eltcolor3."',
-                                user_bgcolor = '".$bgcolor."' 
+                                user_bgcolor = '".$bgcolor."',
+                                user_linespace = '".$linespace."'
      WHERE user_id = '".$user_id."' ";
     $result = $connection->query($query);
 

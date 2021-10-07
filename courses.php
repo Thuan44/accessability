@@ -54,24 +54,22 @@ $listCoursesById = listCoursesById($user_id);
     <!-- List of Available Courses -->
     <div class="available-courses mt-5">
         <div class="course-title">Cours disponibles
-        </div>
-
-        <div class="row course-list">
-            <?php foreach ($listCourses as $row) {?>
-            <div class="col-6 col-md-3 my-1">
-                <div class="card mt-3 px-2 py-2 align-items-center">
-                    <div class="card_img">
-                        <img src="src/<?php echo $row['course_img_principal']; ?>" class="card-img-top" alt="">
-                    </div>
-                    <div class="card-body justify-content-center">
-                        <?php echo $row['course_title']; ?>
-                    </div>
-                    <form action="" method="POST">
+            <div class="row">
+                <?php foreach ($listCourses as $row) {?>
+                <div class="col-6 col-md-3 my-5">
+                    <div class="card px-2 py-2">
+                        <div class="card_img">
+                            <img src="src/<?php echo $row['course_img_principal']; ?>" class="card-img-top" alt="">
+                        </div>
+                        <div class="card-body justify-content-center">
+                            <?php echo $row['course_title']; ?>
+                        </div>
+                        <div class="card_button">
                         <input type="submit" class="btn btn-primary course_items" name="add"" value=" Aller au cours">
                         <input type="hidden" name="course_id" value="<?= $row["course_id"] ?>">
-                    </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
             <?php }?>
         </div>

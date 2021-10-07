@@ -134,15 +134,6 @@ h3.login-title::first-letter {
   width: 90%;
 }
 
-/*
-* singleCourse
-*/
-#single_course h1 {
-  color: #505050;
-  font-size: 3rem;
-  font-weight: 800;
-}
-
 .btn-authentication {
   width: 150px !important;
   background: #fdce37;
@@ -152,6 +143,23 @@ h3.login-title::first-letter {
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
+  border: 2px solid #fdce37;
+}
+
+/*
+* singleCourse
+*/
+#single_course h1 {
+  color: #505050;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.inside-container {
+  padding: 0 120px 0;
+}
+
+.btn-retour-cours {
   border: 2px solid #fdce37;
 }
 

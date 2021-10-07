@@ -55,6 +55,27 @@ function signUp($userEmail, $userPassword)
     header('Location: login.php');
 }
 
+//Update Database
+function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
+{
+    
+    global $connection;
+    
+    $user_id = $_SESSION['user_id'];
+    
+    $query = "UPDATE users SET user_fontfamily = '".$fontname."',
+    user_fontsize = '".$fontsize."',
+    user_fontcolor = '".$fontcolor."',
+    user_eltcolor_1	= '".$eltcolor1."',
+    user_eltcolor_2	= '".$eltcolor2."',
+    user_eltcolor_3	= '".$eltcolor3."',
+    user_bgcolor = '".$bgcolor."' 
+    WHERE user_id = '".$user_id."' ";
+    $result = $connection->query($query);
+    
+    header('Location: preferences.php');
+}
+
 //List Courses
 function listCourses()
 {
@@ -113,6 +134,18 @@ function listCoursesById($id)
         )
     );
     return $request->fetchAll();
+}
 
-    unset($_POST);
+// Get single course
+function getSingleCourse($course_id)
+{
+    global $connection;
+    $select = "SELECT * FROM courses WHERE course_id=?";
+    $request = $connection->prepare($select);
+    $request->execute(
+        array(
+            $course_id
+        )
+    );
+    return $request->fetch();
 }

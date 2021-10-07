@@ -1,5 +1,6 @@
 <?php include_once 'header.php' ?>
 
+
 <?php
     if(isset($_POST['submit_update_db'])){
       if(!empty($_POST['FontName']) && !empty($_POST['FontSize'])
@@ -73,10 +74,18 @@
 
             <div class="mt-2">
                 <h1 style="font-size: 28px; color:#ffffff"> PRÉFÈRENCES </h1>
+                <?php if(isset($_SESSION)){
+                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\"> ← Retour au cours</span></div>";
+                }else {
+                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\"> ← Retour </span></div>";
+                } ?>
             </div>
         </div>
         <div class="col-md-8">
             <div class="preferencestexte px-3 py-3">
+
+                <p style="font-size: 28px; font-weight: bold; color:#271549">Configurez vos préférences visuelles afin
+                    de faciliter la lecture des cours</p>
 
                 <form method="post" action="">
                     <label style="font-weight: bold; color:#271549" for="FontName">Choisissez une police :</label>

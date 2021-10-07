@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 * General
 */
@@ -5,8 +6,26 @@ body {
   background-color: #efeef3;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-x: hidden;
+}
+
+h1 {
+  color: #efeef3;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px #777;
+}
+
+h2 {
+  color: #271549;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px #777;
+  margin-bottom: 50px;
 }
 
 h3 {
@@ -16,8 +35,14 @@ h3 {
   margin-bottom: 0 !important;
   color: #505050;
 }
+
 h3::first-letter {
   text-transform: uppercase;
+}
+
+h4 {
+  margin-bottom: 10px;
+  font-size: 1.7rem;
 }
 
 .small-divider {
@@ -25,6 +50,13 @@ h3::first-letter {
   width: 20px;
   background-color: rgba(50, 50, 50, 0.2);
   margin: 10px auto 5px;
+}
+
+.big-divider {
+  height: 5px;
+  width: 50px;
+  background-color: #fdce37;
+  margin-bottom: 20px;
 }
 
 .main-container {
@@ -39,6 +71,7 @@ h3::first-letter {
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-action-custom:hover {
   background: #271549;
   color: #fdce37;
@@ -52,14 +85,8 @@ h3::first-letter {
 /*
 * Login
 */
-h3.login-title {
-  color: #505050;
-  text-transform: lowercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0 !important;
-}
-h3.login-title::first-letter {
-  text-transform: uppercase;
+.logo-lookable-container {
+  width: 60px;
 }
 
 .login-logo-container {
@@ -67,6 +94,15 @@ h3.login-title::first-letter {
   top: 20px;
   left: 20px;
   width: 50px;
+}
+
+.homepage-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px !important;
 }
 
 .login-left,
@@ -79,13 +115,36 @@ h3.login-title::first-letter {
 }
 
 .login-img {
-  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 
 .form-container {
   background-color: #fff;
-  min-width: 300px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  min-width: 400px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.form-container input {
+  padding: 10px;
+  line-height: 28px;
+}
+
+.form-container input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input::-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input::placeholder {
+  font-size: 1.2rem;
 }
 
 .login-title {
@@ -96,18 +155,22 @@ h3.login-title::first-letter {
 .login-subtitle,
 .signup-subtitle {
   color: #271549;
+  font-size: 1.6rem;
 }
 
 .login-btn {
   background-color: #271549;
+  font-size: 1.2rem;
+  padding: 10px;
 }
+
 .login-btn:hover {
   background-color: #42237a;
 }
 
 .signup-group {
-  font-size: 0.9rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 /*
@@ -119,31 +182,103 @@ h3.login-title::first-letter {
   color: #efeef3;
   position: relative;
 }
-#homepage h1 {
-  color: #efeef3;
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 800;
+
+#homepage p.lead {
+  font-size: 1.4rem;
+}
+
+#homepage p {
+  font-size: 1.2rem !important;
 }
 
 #home_main_content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 90%;
+}
+
+.slogan::before {
+  content: "La clé de l'insertion professionnelle";
+  background-color: #fdce37;
+  color: #271549;
 }
 
 .btn-authentication {
   width: 150px !important;
+  padding: 10px;
+  font-size: 1.2rem;
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
   border: 2px solid #fdce37;
+}
+
+.btn-logged-user {
+  width: 200px !important;
+}
+
+#anchor-accessibility {
+  position: absolute;
+  bottom: 10px;
+  right: 190px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #efeef3 !important;
+  text-decoration: none;
+}
+
+#anchor-accessibility .fa-universal-access {
+  width: 20px;
+  height: 16px;
+  margin: 0;
+  color: #efeef3;
+}
+
+#anchor-partnership {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #efeef3;
+  text-decoration: none;
+}
+
+#accessibility {
+  color: #271549 !important;
+}
+
+#accessibility p,
+#accessibility ul {
+  font-size: 1.2rem;
+}
+
+#accessibility .accessibility-title::before {
+  content: "A";
+  background-color: #fdce37;
+}
+
+#partnership {
+  margin-top: 100px !important;
+}
+
+#partnership .partnership-title::before {
+  content: "Ils";
+  background-color: #fdce37;
+}
+
+#haut-de-page {
+  color: #271549;
+  font-size: 2rem;
+  margin: 50px 0;
 }
 
 /*
@@ -163,12 +298,31 @@ h3.login-title::first-letter {
   border: 2px solid #fdce37;
 }
 
+.btn-retour-cours {
+  width: 250px !important;
+  padding: 10px !important;
+  font-size: 1.2rem !important;
+  background: #fdce37 !important;
+  color: #271549 !important;
+  border: 2px solid #271549 !important;
+}
+
+.btn-retour-cours:hover {
+  background: #271549 !important;
+  color: #fdce37 !important;
+  border: 2px solid #fdce37 !important;
+}
+
 /*
 * Courses
 */
 .course-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .fas {
@@ -194,7 +348,9 @@ h3.login-title::first-letter {
 
 .card-body {
   color: black !important;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card-img-top {
@@ -202,87 +358,14 @@ h3.login-title::first-letter {
   width: 100%;
 }
 
-/*
-* SingleCourse
-*/
-/*# sourceMappingURL=style.css.map */
-
-/*
-* Preferences
-*/
-
-/* Initialise les boutons de choix de couleur daltonisme selon
-leur couleur */
-.PremiersBoutonsDAltonisme>button:nth-child(1),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(1),
-.TroisiemesBoutonsDAltonisme>button:nth-child(1){
-  background-color: red;
-  color: white;
-}
-.PremiersBoutonsDAltonisme>button:nth-child(2),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(2),
-.TroisiemesBoutonsDAltonisme>button:nth-child(2){
-  background-color: yellow;
-  color: white;
-}
-.PremiersBoutonsDAltonisme>button:nth-child(3),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(3),
-.TroisiemesBoutonsDAltonisme>button:nth-child(3){
-  background-color: green;
-  color: white;
-}
-.PremiersBoutonsDAltonisme>button:nth-child(4),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(4),
-.TroisiemesBoutonsDAltonisme>button:nth-child(4){
-  background-color: cyan;
-  color: white;
-}
-.PremiersBoutonsDAltonisme>button:nth-child(5),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(5),
-.TroisiemesBoutonsDAltonisme>button:nth-child(5){
-  background-color: blue;
-  color: white;
-}
-.PremiersBoutonsDAltonisme>button:nth-child(6),
-.DeuxiemesBoutonsDAltonisme>button:nth-child(6),
-.TroisiemesBoutonsDAltonisme>button:nth-child(6){
-  background-color: purple;
-  color: white;
-}
-
-/*Formatage de la police Luciole dont la source est en local*/
-/*! Generated by Font Squirrel (https://www.fontsquirrel.com) on October 6, 2021 */
-@font-face {
-  font-family: 'luciolebold';
-  src: url('../src/Font/Luciole/luciole-bold-webfont.woff2') format('woff2'),
-       url('../src/Font/Luciole/luciole-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'luciolebold_italic';
-  src: url('../src/Font/Luciole/luciole-bold-italic-webfont.woff2') format('woff2'),
-       url('../src/Font/Luciole/luciole-bold-italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'lucioleregular';
-  src: url('../src/Font/Luciole/luciole-regular-webfont.woff2') format('woff2'),
-       url('../src/Font/Luciole/luciole-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'lucioleitalic';
-  src: url('../src/Font/Luciole/luciole-regular-italic-webfont.woff2') format('woff2'),
-       url('../src/Font/Luciole/luciole-regular-italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.DemoError{
-  text-decoration: black wavy underline;
+@media only screen and (max-width: 768px) {
+  .login-left,
+  .main-content-img {
+    display: none !important;
+  }
+  .main-content-text {
+    width: 100%;
+  }
 }
 
 .follow-course_items {
@@ -301,29 +384,98 @@ leur couleur */
   width: 100%;
 }
 
-h1 {
-  color: #efeef3;
-  font-size: 4rem;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-#home_main_content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-}
-
+/*
+* Preferences
+*/
 .btn-authentication {
   width: 150px !important;
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
   border: 2px solid #fdce37;
 }
+
+/* Initialise les boutons de choix de couleur daltonisme selon
+leur couleur */
+.PremiersBoutonsDAltonisme > button:nth-child(1),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(1),
+.TroisiemesBoutonsDAltonisme > button:nth-child(1) {
+  background-color: red;
+  color: white;
+}
+
+.PremiersBoutonsDAltonisme > button:nth-child(2),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(2),
+.TroisiemesBoutonsDAltonisme > button:nth-child(2) {
+  background-color: yellow;
+  color: white;
+}
+
+.PremiersBoutonsDAltonisme > button:nth-child(3),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(3),
+.TroisiemesBoutonsDAltonisme > button:nth-child(3) {
+  background-color: green;
+  color: white;
+}
+
+.PremiersBoutonsDAltonisme > button:nth-child(4),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(4),
+.TroisiemesBoutonsDAltonisme > button:nth-child(4) {
+  background-color: cyan;
+  color: white;
+}
+
+.PremiersBoutonsDAltonisme > button:nth-child(5),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(5),
+.TroisiemesBoutonsDAltonisme > button:nth-child(5) {
+  background-color: blue;
+  color: white;
+}
+
+.PremiersBoutonsDAltonisme > button:nth-child(6),
+.DeuxiemesBoutonsDAltonisme > button:nth-child(6),
+.TroisiemesBoutonsDAltonisme > button:nth-child(6) {
+  background-color: purple;
+  color: white;
+}
+
+/*Formatage de la police Luciole dont la source est en local*/
+/*! Generated by Font Squirrel (https://www.fontsquirrel.com) on October 6, 2021 */
+@font-face {
+  font-family: 'luciolebold';
+  src: url("../src/Font/Luciole/luciole-bold-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'luciolebold_italic';
+  src: url("../src/Font/Luciole/luciole-bold-italic-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-bold-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lucioleregular';
+  src: url("../src/Font/Luciole/luciole-regular-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lucioleitalic';
+  src: url("../src/Font/Luciole/luciole-regular-italic-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-regular-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.DemoError {
+  -webkit-text-decoration: black wavy underline;
+          text-decoration: black wavy underline;
+}
+/*# sourceMappingURL=style.css.map */

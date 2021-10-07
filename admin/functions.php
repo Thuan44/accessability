@@ -18,6 +18,13 @@ function login($userEmail, $userPassword)
         $_SESSION['user_email'] = $data['user_email'];
         $_SESSION['user_password'] = $data['user_password'];
         $_SESSION['user_role'] = $data['user_role'];
+        $_SESSION['user_fontfamily'] = $data['user_fontfamily'];
+        $_SESSION['user_fontsize'] = $data['user_fontsize'];
+        $_SESSION['user_fontcolor'] = $data['user_fontcolor'];
+        $_SESSION['user_eltcolor_1'] = $data['user_eltcolor_1'];
+        $_SESSION['user_eltcolor_2'] = $data['user_eltcolor_2'];
+        $_SESSION['user_eltcolor_3'] = $data['user_eltcolor_3'];
+        $_SESSION['user_bgcolor'] = $data['user_bgcolor'];
 
         // Verify password
         if (password_verify($userPassword, $data['user_password'])) {
@@ -27,7 +34,11 @@ function login($userEmail, $userPassword)
             }
             // Visitor
             if ($_SESSION['user_role'] == 1) {
-                header('Location: ./courses.php?user_id=' . $_SESSION['user_id']);
+                if(is_null($_SESSION['user_fontfamily'])){
+                    header('Location: ./preferences.php');
+                } else {
+                    header('Location: ./courses.php');
+                }
             }
         } else {
             echo "Connexion echouée";
@@ -38,16 +49,18 @@ function login($userEmail, $userPassword)
 }
 
 // Create account
-function signUp($userEmail, $userPassword)
+function signUp($userLastname, $userFirstname, $userEmail, $userPassword)
 {
     global $connection;
 
     // Encrypt password
     $encrypted_password = password_hash($userPassword, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO users (user_email, user_password) VALUES ( ?, ?)";
+    $query = "INSERT INTO users (user_lastname, user_firstname, user_email, user_password) VALUES ( ?, ?, ?, ?)";
     $result = $connection->prepare($query);
     $result->execute(array(
+        $userLastname,
+        $userFirstname,
         $userEmail,
         $encrypted_password
     ));
@@ -56,7 +69,7 @@ function signUp($userEmail, $userPassword)
 }
 
 //Update Database
-function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
+function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor, $linespace)
 {
     
     global $connection;
@@ -64,13 +77,14 @@ function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $elt
     $user_id = $_SESSION['user_id'];
     
     $query = "UPDATE users SET user_fontfamily = '".$fontname."',
-    user_fontsize = '".$fontsize."',
-    user_fontcolor = '".$fontcolor."',
-    user_eltcolor_1	= '".$eltcolor1."',
-    user_eltcolor_2	= '".$eltcolor2."',
-    user_eltcolor_3	= '".$eltcolor3."',
-    user_bgcolor = '".$bgcolor."' 
-    WHERE user_id = '".$user_id."' ";
+                                user_fontsize = '".$fontsize."',
+                                user_fontcolor = '".$fontcolor."',
+                                user_eltcolor_1	= '".$eltcolor1."',
+                                user_eltcolor_2	= '".$eltcolor2."',
+                                user_eltcolor_3	= '".$eltcolor3."',
+                                user_bgcolor = '".$bgcolor."',
+                                user_linespace = '".$linespace."'
+     WHERE user_id = '".$user_id."' ";
     $result = $connection->query($query);
     
     header('Location: preferences.php');
@@ -102,7 +116,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singlecourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     } else {
 
         $delete="DELETE FROM users_courses WHERE user_id = ? AND course_id = ?";
@@ -113,7 +127,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singlecourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     }
 }
 
@@ -148,4 +162,53 @@ function getSingleCourse($course_id)
         )
     );
     return $request->fetch();
+}
+
+// Update preferences in database
+function updateCourse($userId, $fontFamily, $fontSize, $fontColor, $eltColor1, $eltColor2, $eltColor3, $bgColor)
+{
+    global $connection;
+
+    $query = "UPDATE users
+            SET user_fontfamily = :fontFamily,
+            user_fontsize = :fontSize,
+            user_fontcolor = :fontColor,
+            user_eltcolor_1 = :eltColor1,
+            user_eltcolor_2 = :eltColor2,
+            user_eltcolor_3 = :eltColor3,
+            user_bgcolor = :bgColor
+            WHERE user_id = :userId";
+
+    $result = $connection->prepare($query);
+    $result->execute(array(
+        ':fontFamily' => $fontFamily,
+        ':fontSize' => $fontSize,
+        ':fontColor' => $fontColor,
+        ':eltColor1' => $eltColor1,
+        ':eltColor2' => $eltColor2,
+        ':eltColor3' => $eltColor3,
+        ':bgColor' => $bgColor,
+        ':userId' => $userId
+    ));
+}
+
+// Update preferences of the user from database to session
+function updateSessionPreferences($userId)
+{
+    global $connection;
+
+    $query = "SELECT * FROM users WHERE user_id = '$userId' LIMIT 1";
+    $result = $connection->prepare($query);
+    $result->execute();
+    $data = $result->fetch();
+
+    if ($data) {
+        $_SESSION['user_fontfamily'] = $data['user_fontfamily'];
+        $_SESSION['user_fontsize'] = $data['user_fontsize'];
+        $_SESSION['user_fontcolor'] = $data['user_fontcolor'];
+        $_SESSION['user_eltcolor_1'] = $data['user_eltcolor_1'];
+        $_SESSION['user_eltcolor_2'] = $data['user_eltcolor_2'];
+        $_SESSION['user_eltcolor_3'] = $data['user_eltcolor_3'];
+        $_SESSION['user_bgcolor'] = $data['user_bgcolor'];
+    }
 }

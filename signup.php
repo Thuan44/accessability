@@ -5,7 +5,7 @@ if (isset($_POST['submit_signup'])) {
     if ($_POST['user_password'] !== $_POST['password_confirmation']) {
         echo "Vos mots de passe ne correspondent pas";
     } else {
-        signUp($_POST['user_email'], $_POST['user_password']);
+        signUp($_POST['user_lastname'], $_POST['user_firstname'], $_POST['user_email'], $_POST['user_password']);
     }
 }
 ?>
@@ -14,7 +14,7 @@ if (isset($_POST['submit_signup'])) {
     <div class="row">
         <div class="col-md-6 px-0">
             <div class="login-logo-container">
-                <a href="/accessability"><img src="src/logo-epsi.png" alt="logo EPSI" class="w-100"></a>
+                <a href="/accessability"><img src="src/logo-lookable.png" alt="logo Lookable" class="w-100"></a>
             </div>
             <div class="login-left d-flex justify-content-center align-items-center">
                 <img src="src/welcome.svg" alt="login image" class="w-50 login-img">
@@ -23,14 +23,17 @@ if (isset($_POST['submit_signup'])) {
         <div class="col-md-6 col-xs-12 px-0">
             <div class="login-right">
                 <div class="login-form d-flex justify-content-center align-items-center h-100 flex-column">
-                    <h3 class="login-title text-center mb-2">Access<span class="text-uppercase">A</span>bility</h3>
-                    <p class="signup-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes malvoyantes</p>
+                    <h1 class="login-title text-center mb-2"><span class="text-uppercase" style="color: #fdce37; text-shadow: 1px 1px 2px #777">L</span>ook<span class="text-uppercase" style="color: #fdce37; text-shadow: 1px 1px 2px #777">A</span>ble</h1>
+                    <p class="signup-subtitle text-center mb-4">La plateforme d'apprentissage conçue pour les personnes
+                        malvoyantes</p>
                     <div class="form-container rounded p-5">
                         <form class="form" action="#" method="POST">
                             <h4 class="text-center mb-3 signup-title">Créer un compte</h4>
 
                             <?php session_destroy(); ?>
 
+                            <input type="text" class="form-control mb-2" placeholder="Nom" name="user_lastname" value="" required>
+                            <input type="text" class="form-control mb-2" placeholder="Prénom" name="user_firstname" value="" required>
                             <input type="email" class="form-control mb-2" placeholder="Email" name="user_email" value="" required>
                             <input type="password" class="form-control mb-2" placeholder="Mot de passe" name="user_password" value="" required>
                             <input type="password" class="form-control mb-2" placeholder="Confirmer mot de passe" name="password_confirmation" value="" required>

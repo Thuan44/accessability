@@ -201,7 +201,7 @@ h4 {
 }
 
 .slogan::before {
-  content: 'La clé de l\'insertion professionnelle';
+  content: "La clé de l'insertion professionnelle";
   background-color: #fdce37;
   color: #271549;
 }
@@ -231,8 +231,15 @@ h4 {
   right: 190px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #efeef3;
+  color: #efeef3 !important;
   text-decoration: none;
+}
+
+#anchor-accessibility .fa-universal-access {
+  width: 20px;
+  height: 16px;
+  margin: 0;
+  color: #efeef3;
 }
 
 #anchor-partnership {
@@ -249,19 +256,14 @@ h4 {
   color: #271549 !important;
 }
 
-#accessibility p, #accessibility ul {
+#accessibility p,
+#accessibility ul {
   font-size: 1.2rem;
 }
 
 #accessibility .accessibility-title::before {
-  content: 'A';
+  content: "A";
   background-color: #fdce37;
-}
-
-#haut-de-page {
-  color: #271549;
-  font-size: 2rem;
-  margin: 50px 0;
 }
 
 #partnership {
@@ -269,8 +271,14 @@ h4 {
 }
 
 #partnership .partnership-title::before {
-  content: 'Ils';
+  content: "Ils";
   background-color: #fdce37;
+}
+
+#haut-de-page {
+  color: #271549;
+  font-size: 2rem;
+  margin: 50px 0;
 }
 
 /*
@@ -294,8 +302,12 @@ h4 {
 * Courses
 */
 .course-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .fas {
@@ -332,7 +344,8 @@ h4 {
 }
 
 @media only screen and (max-width: 768px) {
-  .login-left, .main-content-img {
+  .login-left,
+  .main-content-img {
     display: none !important;
   }
   .main-content-text {

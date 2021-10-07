@@ -135,7 +135,19 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 </iframe>
             </div>
             <div class="inside-container">
+                <div class="audio-text">
+                    <div class="audio-icon me-4">
+                        <i class="fas fa-volume-up fa-4x "></i>
+                    </div>
+                    <div class="audio-explain">
+                        <p style="font-size: 1.2rem;font-style: italic;line-height : 110%;" class="m-0">
+                            Un <em style="font-weight: bold;">lecteur de texte</em> est disponible pour vous assister dans la lecture des paragraphes du cours.<br>
+                            <em style="font-weight: bold;">Cliquez</em> sur un paragraphe pour démarrer sa lecture.
+                        </p>
+                    </div>
+                </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_1'] ?></h3>
+
                 <hr>
                 <p id="para-course-1" class="para-course-1 para-custom">
                     <?= $course['course_text'] ?>
@@ -152,8 +164,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
                 <hr>
                 <div class="podcast w-100">
-                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true"
-                        allow="encrypted-media" class="w-100"></iframe>
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
 

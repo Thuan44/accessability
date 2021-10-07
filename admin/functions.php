@@ -210,5 +210,6 @@ function updateSessionPreferences($userId)
         $_SESSION['user_eltcolor_2'] = $data['user_eltcolor_2'];
         $_SESSION['user_eltcolor_3'] = $data['user_eltcolor_3'];
         $_SESSION['user_bgcolor'] = $data['user_bgcolor'];
+        $_SESSION['user_linespace'] = $data['user_linespace'];
     }
 }

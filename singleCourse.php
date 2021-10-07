@@ -78,20 +78,20 @@ if (!is_null($_SESSION['user_eltcolor_3'])) {
         </style>";
 }
 
-// Error color
-if (!is_null($_SESSION['user_eltcolor_3'])) {
-    echo "<style type='text/css'>
-        #single_course a{
-            color: " . $_SESSION['user_eltcolor_3'] . ";
-        }
-        </style>";
-}
-
 // Background color
 if (!is_null($_SESSION['user_bgcolor'])) {
     echo "<style type='text/css'>
         #single_course {
             background: " . $_SESSION['user_bgcolor'] . ";
+        }
+        </style>";
+}
+
+// Line height
+if (!is_null($_SESSION['user_linespace'])) {
+    echo "<style type='text/css'>
+        #single_course p {
+            line-height: " . $_SESSION['user_linespace'] . "% ;
         }
         </style>";
 }
@@ -124,8 +124,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
     <div class="container">
         <main id="single_course_main_content" class="main-container">
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center mb-5">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
-                    aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
             </div>
 
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
@@ -169,8 +168,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
             </div>
 
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
-                    aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
             </div>
         </main>
     </div>

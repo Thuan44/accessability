@@ -6,7 +6,8 @@ body {
   background-color: #efeef3;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow-x: hidden;
 }
 
@@ -34,6 +35,7 @@ h3 {
   margin-bottom: 0 !important;
   color: #505050;
 }
+
 h3::first-letter {
   text-transform: uppercase;
 }
@@ -41,6 +43,7 @@ h3::first-letter {
 h4 {
   margin-bottom: 10px;
   font-size: 1.7rem;
+  color: #271549;
 }
 
 .small-divider {
@@ -69,6 +72,7 @@ h4 {
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-action-custom:hover {
   background: #271549;
   color: #fdce37;
@@ -97,7 +101,8 @@ h4 {
   position: absolute;
   top: 40px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 80px !important;
 }
 
@@ -111,18 +116,34 @@ h4 {
 }
 
 .login-img {
-  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
+          filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.4));
 }
 
 .form-container {
   background-color: #fff;
   min-width: 400px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+
 .form-container input {
   padding: 10px;
   line-height: 28px;
 }
+
+.form-container input::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.form-container input::-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
 .form-container input::placeholder {
   font-size: 1.2rem;
 }
@@ -143,6 +164,7 @@ h4 {
   font-size: 1.2rem;
   padding: 10px;
 }
+
 .login-btn:hover {
   background-color: #42237a;
 }
@@ -161,9 +183,11 @@ h4 {
   color: #efeef3;
   position: relative;
 }
+
 #homepage p.lead {
   font-size: 1.4rem;
 }
+
 #homepage p {
   font-size: 1.2rem !important;
 }
@@ -172,7 +196,8 @@ h4 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 90%;
 }
 
@@ -190,6 +215,7 @@ h4 {
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
@@ -204,10 +230,12 @@ h4 {
   position: absolute;
   bottom: 10px;
   right: 190px;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   color: #efeef3 !important;
   text-decoration: none;
 }
+
 #anchor-accessibility .fa-universal-access {
   width: 20px;
   height: 16px;
@@ -219,7 +247,8 @@ h4 {
   position: absolute;
   bottom: 10px;
   right: 0;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   color: #efeef3;
   text-decoration: none;
 }
@@ -227,10 +256,12 @@ h4 {
 #accessibility {
   color: #271549 !important;
 }
+
 #accessibility p,
 #accessibility ul {
   font-size: 1.2rem;
 }
+
 #accessibility .accessibility-title::before {
   content: "A";
   background-color: #fdce37;
@@ -239,6 +270,7 @@ h4 {
 #partnership {
   margin-top: 100px !important;
 }
+
 #partnership .partnership-title::before {
   content: "Ils";
   background-color: #fdce37;
@@ -273,8 +305,9 @@ h4 {
   font-size: 1.2rem !important;
   background: #fdce37 !important;
   color: #271549 !important;
-  border: 2px solid #271549 !important;
+  border: 2px solid #fdce37 !important;
 }
+
 .btn-retour-cours:hover {
   background: #271549 !important;
   color: #fdce37 !important;
@@ -285,14 +318,24 @@ h4 {
 * Courses
 */
 .course-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .audio-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fa-cogs,
@@ -324,7 +367,9 @@ h4 {
 
 .card-body {
   color: black !important;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card-img-top {
@@ -332,16 +377,6 @@ h4 {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  .login-left,
-.main-content-img {
-    display: none !important;
-  }
-
-  .main-content-text {
-    width: 100%;
-  }
-}
 .follow-course_items {
   height: 40px;
   color: #efeef3;
@@ -362,11 +397,12 @@ h4 {
 * Preferences
 */
 .btn-authentication {
-  width: 150px !important;
+  width: 200px !important;
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
 }
+
 .btn-authentication:hover {
   background: #271549;
   color: #fdce37;
@@ -420,29 +456,60 @@ leur couleur */
 /*Formatage de la police Luciole dont la source est en local*/
 /*! Generated by Font Squirrel (https://www.fontsquirrel.com) on October 6, 2021 */
 @font-face {
-  font-family: "luciolebold";
+  font-family: 'luciolebold';
   src: url("../src/Font/Luciole/luciole-bold-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "luciolebold_italic";
+  font-family: 'luciolebold_italic';
   src: url("../src/Font/Luciole/luciole-bold-italic-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-bold-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "lucioleregular";
+  font-family: 'lucioleregular';
   src: url("../src/Font/Luciole/luciole-regular-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "lucioleitalic";
+  font-family: 'lucioleitalic';
   src: url("../src/Font/Luciole/luciole-regular-italic-webfont.woff2") format("woff2"), url("../src/Font/Luciole/luciole-regular-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 .DemoError {
-  text-decoration: black wavy underline;
-}/*# sourceMappingURL=style.css.map */
+  -webkit-text-decoration: black wavy underline;
+          text-decoration: black wavy underline;
+}
+
+@media only screen and (max-width: 992px) {
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-left,
+  .main-content-img {
+    display: none !important;
+  }
+  .main-content-text {
+    width: 100%;
+  }
+  .main-container {
+    padding: 10px !important;
+  }
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+  .btn-retour-cours {
+    margin-top: 20px !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

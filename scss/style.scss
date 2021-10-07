@@ -285,12 +285,11 @@ h4{
 /*
 * Courses
 */
-
-.course-bar {
-    text-align: end;
+.course-bar{
+    display: flex;
+    justify-content: space-between;
 }
-
-.fa-cogs {
+.fas {
     color: $primary-color;
     margin: 10px 30px;
     height: 100px;

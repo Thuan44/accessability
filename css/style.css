@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 * General
 */
@@ -200,7 +201,7 @@ h4 {
 }
 
 .slogan::before {
-  content: 'La plateforme d\'apprentissage';
+  content: 'La clé de l\'insertion professionnelle';
   background-color: #fdce37;
   color: #271549;
 }
@@ -292,15 +293,22 @@ h4 {
 /*
 * Courses
 */
-.course-btn {
-  background-color: #271549;
-  margin: 50px;
-  font-size: 2rem;
-  color: #efeef3;
+.course-bar {
+  text-align: end;
 }
 
-.course-btn:hover {
-  background-color: #42237a;
+.fa-cogs {
+  color: #271549;
+  margin: 10px 30px;
+  height: 100px;
+  width: 100px;
+}
+
+.course-title {
+  background-color: #271549;
+  color: #efeef3;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .course_items {
@@ -312,10 +320,12 @@ h4 {
 
 .card-body {
   color: black !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .card-img-top {
-  text-align: center;
   height: 150px;
   width: 100%;
 }
@@ -327,5 +337,21 @@ h4 {
   .main-content-text {
     width: 100%;
   }
+}
+
+.follow-course_items {
+  height: 40px;
+  color: #efeef3;
+  background-color: #271549;
+}
+
+.follow-card-body {
+  color: black !important;
+  font-size: 0.75rem;
+}
+
+.follow-card-img-top {
+  height: 100px;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

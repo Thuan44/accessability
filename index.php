@@ -10,10 +10,9 @@
         <div class="row justify-content-around align-items-center mb-5">
             <div class="col-6 main-content-text p-5">
                 <h1 class="mb-4"><span style="color: #fdce37;">L</span>ook<span style="color: #fdce37;">A</span>ble</h1>
-                <p class="lead mb-4 slogan"> accessible à toutes les personnes malvoyantes</p>
-                <p>Notre outil, adaptable selon les besoins de l'utilisateur, apporte une solution numérique
-                    personnalisée en fonction des différents profils de personnes malvoyantes, leur conférant une
-                    expérience agréable et leur offrant une complète autonomie lors de leur apprentissage.</p>
+                <p class="lead mb-4 slogan"> pour tous</p>
+                <p>Véritable outil adapté et adaptable aux besoins des personnes malvoyantes, notre outil apporte une solution numérique ultra-personnalisée en fonction des différents degrés de handicap visuel. Profitez d'une
+                    expérience agréable et d'une complète autonomie tout au long de votre parcours d'apprentissage.</p>
             </div>
             <div class="col-6 main-content-img p-5">
                 <div class="main-content-img-container">

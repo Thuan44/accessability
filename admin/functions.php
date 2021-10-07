@@ -71,9 +71,9 @@ function signUp($userLastname, $userFirstname, $userEmail, $userPassword)
 //Update Database
 function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
 {
-
+    
     global $connection;
-
+    
     $user_id = $_SESSION['user_id'];
 
     $query = "UPDATE users SET user_fontfamily = '" . $fontname . "',
@@ -85,10 +85,11 @@ function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $elt
                                 user_bgcolor = '" . $bgcolor . "' 
      WHERE user_id = '" . $user_id . "' ";
     $result = $connection->query($query);
-
+    
     header('Location: preferences.php');
 }
 
+//List Courses
 function listCourses()
 {
     global $connection;
@@ -98,10 +99,47 @@ function listCourses()
     return $request->fetchAll();
 }
 
+//Set Course in DB
+function setCourseinDb($user_id, $course_id)
+{
+    global $connection;
+
+    $select = "SELECT * FROM users_courses WHERE user_id = ? AND course_id = ?";
+    $request = $connection->prepare($select);
+    $request->execute(array($user_id, $course_id));
+    $data = $request->fetchAll();
+
+    if (!$data) {
+
+        $insert = "INSERT INTO users_courses(user_id,course_id ) VALUES (?,?)";
+        $request = $connection->prepare($insert);
+        $request->execute(array($user_id, $course_id));
+
+        header('Location: singlecourse.php?id=' . $course_id);
+    } else {
+
+        $delete="DELETE FROM users_courses WHERE user_id = ? AND course_id = ?";
+        $request = $connection->prepare($delete);
+        $request->execute(array($user_id, $course_id));
+
+        $insert = "INSERT INTO users_courses(user_id,course_id ) VALUES (?,?)";
+        $request = $connection->prepare($insert);
+        $request->execute(array($user_id, $course_id));
+
+        header('Location: singlecourse.php?id=' . $course_id);
+    }
+}
+
+//List Courses By Id
 function listCoursesById($id)
 {
     global $connection;
-    $select = "SELECT * FROM users_courses WHERE user_id=?";
+    $select = "SELECT * 
+                FROM users_courses 
+                INNER JOIN courses
+                ON users_courses.course_id = courses.course_id 
+                WHERE user_id=?
+                ORDER BY user_course_id DESC LIMIT 6";
     $request = $connection->prepare($select);
     $request->execute(
         array(

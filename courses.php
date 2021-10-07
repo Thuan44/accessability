@@ -74,10 +74,10 @@ $listCoursesById = listCoursesById($user_id);
                         <div class="card-body justify-content-center">
                             <?php echo $row['course_title']; ?>
                         </div>
-                        <div class="card_button">
-                            <input type="submit" class="btn btn-primary course_items" name="add"" value=" Aller au cours">
+                        <form action="" method="post">
+                            <input type="submit" class="btn btn-primary follow-course_items my-2" name="add"" value=" Aller au cours">
                             <input type="hidden" name="course_id" value="<?= $row["course_id"] ?>">
-                        </div>
+                        </form>
                     </div>
                 </div>
 

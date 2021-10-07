@@ -8,6 +8,22 @@ $course = getSingleCourse($course_id);
 
 ?>
 
+<!-- Btn Logout and Preferences -->
+<div class="course-bar">
+    <div class="course-bar-left">
+        <a href="logout.php">
+            <i class="fas fa-power-off fa-6x"></i>
+            </i>
+        </a>
+    </div>
+
+    <div class="course-bar-right">
+        <a href="preferences.php">
+            <i class="fas fa-cogs fa-6x">
+            </i>
+        </a>
+    </div>
+</div>
 
 <section id="single_course">
     <div class="container">

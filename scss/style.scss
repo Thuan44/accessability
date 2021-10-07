@@ -41,6 +41,7 @@ h3 {
 /*
 * Signup
 */
+
 .btn-action-custom {
     background: $secondary-color;
     color: $primary-color;
@@ -60,6 +61,7 @@ h3 {
 /*
 * Login
 */
+
 h3.login-title {
     color: $dark-gray;
     text-transform: lowercase;
@@ -122,12 +124,12 @@ h3.login-title {
 /*
 * Homepage
 */
+
 #homepage {
     height: 100vh;
     background-color: $primary-color;
     color: $light-gray;
     position: relative;
-
     h1 {
         color: $light-gray;
         font-size: 4rem;
@@ -135,7 +137,6 @@ h3.login-title {
         font-weight: 800;
     }
 }
-
 
 #home_main_content {
     position: absolute;
@@ -161,6 +162,7 @@ h3.login-title {
 /*
 * singleCourse
 */
+
 #single_course {
     h1 {
         color: $dark-gray;
@@ -169,27 +171,34 @@ h3.login-title {
     }
 }
 
-.inside-container{
+.inside-container {
     padding: 0 120px 0;
 }
 
-.btn-retour-cours{
+.btn-retour-cours {
     border: 2px solid $secondary-color;
 }
-
 
 
 /*
 * Courses
 */
-.course-btn {
+.course-bar{
+    display: flex;
+    justify-content: space-between;
+}
+.fas {
+    color: $primary-color;
+    margin: 10px 30px;
+    height: 100px;
+    width: 100px;
+}
+
+.course-title {
     background-color: $primary-color;
-    margin: 50px;
-    font-size: 2rem;
     color: $light-gray;
-    &:hover {
-        background-color: #42237a;
-    }
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .course_items {
@@ -198,11 +207,56 @@ h3.login-title {
     color: $light-gray;
     background-color: $primary-color;
 }
-.card-body{
-    color : black !important
+
+.card-body {
+    color: black !important;
+    align-items: center;
 }
+
 .card-img-top {
-    text-align: center;
     height: 150px;
     width: 100%;
+}
+
+.follow-course_items {
+    height: 40px;
+    color: $light-gray;
+    background-color: $primary-color;
+}
+
+.follow-card-body {
+    color: black !important;
+    font-size: 0.75rem;
+}
+
+.follow-card-img-top {
+    height: 100px;
+    width: 100%;
+}
+
+h1 {
+    color: $light-gray;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#home_main_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.btn-authentication {
+    width: 150px !important;
+    background: $secondary-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    &:hover {
+        background: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+    }
 }

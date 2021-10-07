@@ -78,20 +78,20 @@ if (!is_null($_SESSION['user_eltcolor_3'])) {
         </style>";
 }
 
-// Error color
-if (!is_null($_SESSION['user_eltcolor_3'])) {
-    echo "<style type='text/css'>
-        #single_course a{
-            color: " . $_SESSION['user_eltcolor_3'] . ";
-        }
-        </style>";
-}
-
 // Background color
 if (!is_null($_SESSION['user_bgcolor'])) {
     echo "<style type='text/css'>
         #single_course {
             background: " . $_SESSION['user_bgcolor'] . ";
+        }
+        </style>";
+}
+
+// Line height
+if (!is_null($_SESSION['user_linespace'])) {
+    echo "<style type='text/css'>
+        #single_course p {
+            line-height: " . $_SESSION['user_linespace'] . "% ;
         }
         </style>";
 }
@@ -151,8 +151,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
                 <hr>
                 <div class="podcast w-100">
-                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true"
-                        allow="encrypted-media" class="w-100"></iframe>
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
 

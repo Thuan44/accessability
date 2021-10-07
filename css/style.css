@@ -43,6 +43,7 @@ h3::first-letter {
 h4 {
   margin-bottom: 10px;
   font-size: 1.7rem;
+  color: #271549;
 }
 
 .small-divider {
@@ -358,16 +359,6 @@ h4 {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  .login-left,
-  .main-content-img {
-    display: none !important;
-  }
-  .main-content-text {
-    width: 100%;
-  }
-}
-
 .follow-course_items {
   height: 40px;
   color: #efeef3;
@@ -477,5 +468,30 @@ leur couleur */
 .DemoError {
   -webkit-text-decoration: black wavy underline;
           text-decoration: black wavy underline;
+}
+
+@media only screen and (max-width: 992px) {
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-left,
+  .main-content-img {
+    display: none !important;
+  }
+  .main-content-text {
+    width: 100%;
+  }
+  .main-container {
+    padding: 10px !important;
+  }
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+  .btn-retour-cours {
+    margin-top: 20px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -78,20 +78,20 @@ if (!is_null($_SESSION['user_eltcolor_3'])) {
         </style>";
 }
 
-// Error color
-if (!is_null($_SESSION['user_eltcolor_3'])) {
-    echo "<style type='text/css'>
-        #single_course a{
-            color: " . $_SESSION['user_eltcolor_3'] . ";
-        }
-        </style>";
-}
-
 // Background color
 if (!is_null($_SESSION['user_bgcolor'])) {
     echo "<style type='text/css'>
         #single_course {
             background: " . $_SESSION['user_bgcolor'] . ";
+        }
+        </style>";
+}
+
+// Line height
+if (!is_null($_SESSION['user_linespace'])) {
+    echo "<style type='text/css'>
+        #single_course p {
+            line-height: " . $_SESSION['user_linespace'] . "% ;
         }
         </style>";
 }
@@ -124,8 +124,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
     <div class="container">
         <main id="single_course_main_content" class="main-container">
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center mb-5">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
-                    aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
             </div>
 
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
@@ -135,13 +134,25 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 </iframe>
             </div>
             <div class="inside-container">
+                <div class="audio-text">
+                    <div class="audio-icon me-4">
+                        <i class="fas fa-volume-up fa-4x "></i>
+                    </div>
+                    <div class="audio-explain">
+                        <p style="font-size: 1.2rem;font-style: italic;line-height : 110%;" class="m-0">
+                            Un <em style="font-weight: bold;">lecteur de texte</em> est disponible pour vous assister dans la lecture des paragraphes du cours.<br>
+                            <em style="font-weight: bold;">Cliquez</em> sur un paragraphe pour démarrer sa lecture.
+                        </p>
+                    </div>
+                </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_1'] ?></h3>
+
                 <hr>
                 <p id="para-course-1" class="para-course-1 para-custom">
                     <?= $course['course_text'] ?>
                 </p>
                 <div class="img-inside-container mt-4">
-                    <img src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
+                    <img id="zoom" data-zoom-image="src/code.jpg" src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
                 </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>
@@ -152,14 +163,12 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
                 <hr>
                 <div class="podcast w-100">
-                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true"
-                        allow="encrypted-media" class="w-100"></iframe>
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
 
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
-                    aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
             </div>
         </main>
     </div>

@@ -86,7 +86,7 @@ $(document).ready(function () {
                 break;
             case "Normale":
                 $(".ExemplePreferences").css('font-family', "");
-                $("p").css('font-family', "");
+                //$("p").css('font-family', "");
                 break;
         }
     });
@@ -127,15 +127,15 @@ $(document).ready(function () {
         var interligne = $(this).val();
 
         switch (interligne) {
-            case "Small":
+            case "115":
                 //$("p").css("line-height", "115%");
                 $(".ExemplePreferences").css("line-height", "115%");
                 break;
-            case "Medium":
+            case "165":
                 //$("p").css("line-height", "165%");
                 $(".ExemplePreferences").css("line-height", "165%");
                 break;
-            case "Large":
+            case "215":
                 //$("p").css("line-height", "215%");
                 $(".ExemplePreferences").css("line-height", "215%");
                 break;

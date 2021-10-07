@@ -43,6 +43,7 @@ h3::first-letter {
 h4 {
   margin-bottom: 10px;
   font-size: 1.7rem;
+  color: #271549;
 }
 
 .small-divider {
@@ -304,7 +305,7 @@ h4 {
   font-size: 1.2rem !important;
   background: #fdce37 !important;
   color: #271549 !important;
-  border: 2px solid #271549 !important;
+  border: 2px solid #fdce37 !important;
 }
 
 .btn-retour-cours:hover {
@@ -325,11 +326,29 @@ h4 {
           justify-content: space-between;
 }
 
-.fas {
+.audio-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fa-cogs,
+.fa-power-off {
   color: #271549;
   margin: 10px 30px;
   height: 100px;
   width: 100px;
+}
+
+.fa-volume-up {
+  color: #271549;
+  margin: 10px;
 }
 
 .course-title {
@@ -356,16 +375,6 @@ h4 {
 .card-img-top {
   height: 150px;
   width: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-  .login-left,
-  .main-content-img {
-    display: none !important;
-  }
-  .main-content-text {
-    width: 100%;
-  }
 }
 
 .follow-course_items {
@@ -397,7 +406,7 @@ h4 {
 }
 
 .btn-authentication {
-  width: 150px !important;
+  width: 200px !important;
   background: #fdce37;
   color: #271549;
   border: 2px solid #271549;
@@ -486,5 +495,30 @@ leur couleur */
 .DemoError {
   -webkit-text-decoration: black wavy underline;
           text-decoration: black wavy underline;
+}
+
+@media only screen and (max-width: 992px) {
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-left,
+  .main-content-img {
+    display: none !important;
+  }
+  .main-content-text {
+    width: 100%;
+  }
+  .main-container {
+    padding: 10px !important;
+  }
+  .inside-container {
+    padding: 0 20px 0 !important;
+  }
+  .btn-retour-cours {
+    margin-top: 20px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -69,21 +69,22 @@ function signUp($userLastname, $userFirstname, $userEmail, $userPassword)
 }
 
 //Update Database
-function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor)
+function updateDB($fontname, $fontsize, $fontcolor, $eltcolor1, $eltcolor2, $eltcolor3, $bgcolor, $linespace)
 {
     
     global $connection;
     
     $user_id = $_SESSION['user_id'];
-
-    $query = "UPDATE users SET user_fontfamily = '" . $fontname . "',
-                                user_fontsize = '" . $fontsize . "',
-                                user_fontcolor = '" . $fontcolor . "',
-                                user_eltcolor_1	= '" . $eltcolor1 . "',
-                                user_eltcolor_2	= '" . $eltcolor2 . "',
-                                user_eltcolor_3	= '" . $eltcolor3 . "',
-                                user_bgcolor = '" . $bgcolor . "' 
-     WHERE user_id = '" . $user_id . "' ";
+    
+    $query = "UPDATE users SET user_fontfamily = '".$fontname."',
+                                user_fontsize = '".$fontsize."',
+                                user_fontcolor = '".$fontcolor."',
+                                user_eltcolor_1	= '".$eltcolor1."',
+                                user_eltcolor_2	= '".$eltcolor2."',
+                                user_eltcolor_3	= '".$eltcolor3."',
+                                user_bgcolor = '".$bgcolor."',
+                                user_linespace = '".$linespace."'
+     WHERE user_id = '".$user_id."' ";
     $result = $connection->query($query);
     
     header('Location: preferences.php');
@@ -115,7 +116,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singleCourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     } else {
 
         $delete="DELETE FROM users_courses WHERE user_id = ? AND course_id = ?";
@@ -126,7 +127,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singleCourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     }
 }
 

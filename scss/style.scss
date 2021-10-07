@@ -350,6 +350,7 @@ h4 {
         width: 100%;
     }
 }
+
 .follow-course_items {
     height: 40px;
     color: $light-gray;
@@ -369,6 +370,18 @@ h4 {
 /*
 * Preferences
 */
+
+.btn-authentication {
+    width: 150px !important;
+    background: $secondary-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    &:hover {
+        background: $primary-color;
+        color: $secondary-color;
+        border: 2px solid $secondary-color;
+    }
+}
 
 /* Initialise les boutons de choix de couleur daltonisme selon
 leur couleur */

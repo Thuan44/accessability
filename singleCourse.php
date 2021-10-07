@@ -8,8 +8,8 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$course_id = $_GET['id'];
 
+$course_id = $_GET['course_id'];
 $course = getSingleCourse($course_id);
 updateSessionPreferences($user_id);
 
@@ -63,6 +63,9 @@ if (!is_null($_SESSION['user_eltcolor_2'])) {
             background: " . $_SESSION['user_eltcolor_2'] . ";
             color: #fff;
         }
+        .homepage-logo-container a{
+            background: none !important;
+        }
         </style>";
 }
 
@@ -107,7 +110,7 @@ if (!is_null($_SESSION['user_bgcolor'])) {
     </div>
 
     <div class="course-bar-right">
-        <a href="preferences.php">
+        <a href="preferences.php?course_id=<?php echo $course_id ?>">
             <i class="fas fa-cogs fa-6x">
             </i>
         </a>
@@ -121,7 +124,8 @@ if (!is_null($_SESSION['user_bgcolor'])) {
     <div class="container">
         <main id="single_course_main_content" class="main-container">
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center mb-5">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
+                    aux cours</a>
             </div>
 
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
@@ -148,12 +152,14 @@ if (!is_null($_SESSION['user_bgcolor'])) {
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
                 <hr>
                 <div class="podcast w-100">
-                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true"
+                        allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
 
             <div class="btn-retour-cours-container w-100 d-flex justify-content-center">
-                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour
+                    aux cours</a>
             </div>
         </main>
     </div>

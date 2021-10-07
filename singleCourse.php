@@ -2,8 +2,8 @@
 
 include_once 'header.php';
 $user_id = $_SESSION['user_id'];
-$course_id = $_GET['id'];
 
+$course_id = $_GET['course_id'];
 $course = getSingleCourse($course_id);
 
 ?>
@@ -18,7 +18,7 @@ $course = getSingleCourse($course_id);
     </div>
 
     <div class="course-bar-right">
-        <a href="preferences.php">
+        <a href="preferences.php?course_id=<?php echo $course_id ?>">
             <i class="fas fa-cogs fa-6x">
             </i>
         </a>
@@ -28,7 +28,8 @@ $course = getSingleCourse($course_id);
 <section id="single_course">
     <div class="container">
         <main id="single_course_main_content" class="main-container">
-            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
+            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR
+                AUX COURS</a>
 
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
             <hr>
@@ -52,17 +53,19 @@ $course = getSingleCourse($course_id);
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>
                 <p class="para-course-2 para-custom">
-                <?= $course['course_text_2'] ?>
+                    <?= $course['course_text_2'] ?>
                 </p>
 
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
                 <hr>
                 <div class="podcast w-100">
-                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="w-100"></iframe>
+                    <iframe src="<?= $course['course_audio'] ?>" height="380" frameborder="0" allowtransparency="true"
+                        allow="encrypted-media" class="w-100"></iframe>
                 </div>
             </div>
 
-            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
+            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR
+                AUX COURS</a>
         </main>
     </div>
 </section>

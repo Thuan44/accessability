@@ -73,11 +73,16 @@
         <div class="col-md-2" style="background-color:#271549;">
 
             <div class="mt-2">
-                <h1 style="font-size: 28px; color:#ffffff"> PRÉFÈRENCES </h1>
-                <?php if(isset($_SESSION)){
-                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\"> ← Retour au cours</span></div>";
-                }else {
-                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\"> ← Retour </span></div>";
+                <h1 style="position: fixed; font-size: 28px; color:#ffffff"> PRÉFÈRENCES </h1>
+                <?php if(isset($_GET['course_id'])){
+                    $course_id = $_GET['course_id'];
+                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\">
+                    <a style=\"color:#ffffff\" href=\"singlecourse.php?course_id=$course_id\"> ← Retour au cours</a></span></div>";
+                }elseif(isset($_SESSION)) {
+                    $user_id = $_SESSION['user_id'];
+                    echo "<div style=\"position:fixed; bottom: 30px;\"><span style=\"font-size: 20px; color:#ffffff\">
+                    <a style=\"color:#ffffff\" href=\"courses.php?user_id=$user_id\"> ← Retour liste des cours </a></span></div>";
+                }else{
                 } ?>
             </div>
         </div>

@@ -103,7 +103,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singlecourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     } else {
 
         $delete="DELETE FROM users_courses WHERE user_id = ? AND course_id = ?";
@@ -114,7 +114,7 @@ function setCourseinDb($user_id, $course_id)
         $request = $connection->prepare($insert);
         $request->execute(array($user_id, $course_id));
 
-        header('Location: singlecourse.php?id=' . $course_id);
+        header('Location: singlecourse.php?course_id=' . $course_id);
     }
 }
 

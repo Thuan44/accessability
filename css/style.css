@@ -153,8 +153,7 @@ h4 {
   font-weight: bold !important;
 }
 
-.login-subtitle,
-.signup-subtitle {
+.login-subtitle, .signup-subtitle {
   color: #271549;
   font-size: 1.6rem;
 }

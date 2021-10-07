@@ -387,6 +387,19 @@ h4 {
 /*
 * Preferences
 */
+.btn-authentication {
+  width: 200px !important;
+  background: #fdce37;
+  color: #271549;
+  border: 2px solid #271549;
+}
+
+.btn-authentication:hover {
+  background: #271549;
+  color: #fdce37;
+  border: 2px solid #fdce37;
+}
+
 /* Initialise les boutons de choix de couleur daltonisme selon
 leur couleur */
 .PremiersBoutonsDAltonisme > button:nth-child(1),

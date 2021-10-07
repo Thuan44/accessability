@@ -167,10 +167,11 @@ h3.login-title::first-letter {
 * Courses
 */
 .course-bar {
-  text-align: end;
+  display: flex;
+  justify-content: space-between;
 }
 
-.fa-cogs {
+.fas {
   color: #271549;
   margin: 10px 30px;
   height: 100px;

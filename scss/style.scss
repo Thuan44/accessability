@@ -371,6 +371,14 @@ h4 {
 * Preferences
 */
 
+.pref-logo-container {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: 80px !important;
+}
+
 .btn-authentication {
     width: 150px !important;
     background: $secondary-color;

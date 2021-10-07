@@ -171,29 +171,31 @@ $elt3color_radio = $elt3color_array[0];
                                     <?php echo ($fontcolor_radio == '#ffcc99') ? 'checked' : '' ?>> Beige</input>
                             </p>
 
-                            <div>
-                                <p style="font-family: <?php echo $_SESSION['user_fontfamily'] ?>; 
+                            <div class="my-4 demo-text-container">
+                                <fieldset class="shadow-sm">
+                                    <legend class="w-25">Exemple de texte</legend>
+                                    <p style="font-family: <?php echo $_SESSION['user_fontfamily'] ?>; 
                                             font-size: <?php echo $_SESSION['user_fontsize'] ?>px;
                                             color: <?php echo $_SESSION['user_fontcolor'] ?>;
                                             line-height: <?php echo $_SESSION['user_linespace'] ?>%;
                                             background-color: <?php echo $_SESSION['user_bgcolor'] ?>"
-                                    class=" ExemplePreferences">(Exemple) : Commençons
-                                    par
-                                    les variables, notion
-                                    fondamentale
-                                    en
-                                    développement.
-                                    Le but d'un programme est de faire quelque chose avec des données ou,
-                                    en d'autres termes, avec les choses que vous mettez dans votre programme.
-                                    Souvent, votre programme utilisera une ou plusieurs variables pour manipuler les
-                                    données.
-                                    Plus
-                                    précisément,
-                                    une variable est un conteneur utilisé pour stocker un élément de données dont votre
-                                    programme
-                                    pourrait
-                                    avoir
-                                    besoin.</p>
+                                        class="ExemplePreferences p-5 mb-0">Commençons par les variables, notion
+                                        fondamentale
+                                        en
+                                        développement.
+                                        Le but d'un programme est de faire quelque chose avec des données ou,
+                                        en d'autres termes, avec les choses que vous mettez dans votre programme.
+                                        Souvent, votre programme utilisera une ou plusieurs variables pour manipuler les
+                                        données.
+                                        Plus
+                                        précisément,
+                                        une variable est un conteneur utilisé pour stocker un élément de données dont
+                                        votre
+                                        programme
+                                        pourrait
+                                        avoir
+                                        besoin.</p>
+                                </fieldset>
                             </div>
 
                             <label style="font-weight: bold; color:#271549" for="FirstHighlightColor">Choisissez la
@@ -232,6 +234,9 @@ $elt3color_radio = $elt3color_array[0];
                                             background-color: <?php echo $_SESSION['user_bgcolor'] ?>;"
                                     class="FirstColor" href="" for="FirstHighlightColor">Exemple de lien cliquable
                                     :</a>
+
+                            <p><a class="FirstColor" href="" for="FirstHighlightColor">Exemple de lien cliquable</a>
+
                             </p>
 
                             <label style="font-weight: bold; color:#271549" for="SecondHighlightColor">Choisissez la

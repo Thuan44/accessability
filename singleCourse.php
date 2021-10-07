@@ -59,10 +59,10 @@ if (!is_null($_SESSION['user_eltcolor_1'])) {
 // Button color
 if (!is_null($_SESSION['user_eltcolor_2'])) {
     echo "<style type='text/css'>
-        #single_course a{
-            background: " . $_SESSION['user_eltcolor_2'] . ";
-            color: #fff;
+        .btn-retour-cours{
+            background: " . $_SESSION['user_eltcolor_2'] . " !important;
         }
+        
         .homepage-logo-container a{
             background: none !important;
         }

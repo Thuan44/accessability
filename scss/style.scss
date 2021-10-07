@@ -384,14 +384,43 @@ h4 {
 .btn-authentication {
     width: 200px !important;
     background: $secondary-color;
-    color: $primary-color;
-    border: 2px solid $primary-color;
-    &:hover {
-        background: $primary-color;
-        color: $secondary-color;
-        border: 2px solid $secondary-color;
-    }
+// .btn-authentication {
+//     width: 200px !important;
+//     background: $secondary-color;
+//     color: $primary-color;
+//     border: 2px solid $primary-color;
+//     &:hover {
+//         background: $primary-color;
+//         color: $secondary-color;
+//         border: 2px solid $secondary-color;
+//     }
+// }
 }
+
+.demo-text-container{
+    margin-top: 50px !important;
+}
+
+fieldset{
+    position: relative;
+    border: 1px solid $primary-color !important;
+}
+
+legend {
+    position: absolute;
+    top: -3px;
+    left: 150px;
+    transform: translate(-50%, -50%);
+    background-color: $secondary-color;
+    color: $primary-color;
+    padding: 3px 6px;
+    text-align: center;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
 
 /* Initialise les boutons de choix de couleur daltonisme selon
 leur couleur */

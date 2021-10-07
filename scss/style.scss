@@ -309,11 +309,23 @@ h4 {
     display: flex;
     justify-content: space-between;
 }
-.fas {
+
+.audio-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-cogs,
+.fa-power-off {
     color: $primary-color;
     margin: 10px 30px;
     height: 100px;
     width: 100px;
+}
+
+.fa-volume-up {
+    color: $primary-color;
+    margin: 10px;
 }
 
 .course-title {

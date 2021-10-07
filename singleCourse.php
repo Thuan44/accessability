@@ -47,7 +47,7 @@ $course = getSingleCourse($course_id);
                     <?= $course['course_text'] ?>
                 </p>
                 <div class="img-inside-container mt-4">
-                    <img src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
+                    <img id="zoom" data-zoom-image="src/code.jpg" src="src/<?= $course['course_img_inside'] ?>" alt="Image code" class="w-100 mb-4 shadow-sm">
                 </div>
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>

@@ -3,7 +3,7 @@
 include_once 'header.php';
 
 // If user is not connected
-if(!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user_id'])) {
     header('Location: index.php');
 }
 
@@ -17,7 +17,7 @@ updateSessionPreferences($user_id);
 //===== CHANGE STYLE ACCORDING TO USER PREFERENCES =====//
 
 // Font-family
-if(!is_null($_SESSION['user_fontfamily'])){
+if (!is_null($_SESSION['user_fontfamily'])) {
     echo "<style type='text/css'>
         #single_course {
             font-family: " . $_SESSION['user_fontfamily'] . ";  
@@ -26,7 +26,7 @@ if(!is_null($_SESSION['user_fontfamily'])){
 }
 
 // Font-size
-if(!is_null($_SESSION['user_fontsize'])){
+if (!is_null($_SESSION['user_fontsize'])) {
     echo "<style type='text/css'>
         #single_course p {
             font-size: " . $_SESSION['user_fontsize'] . "px;  
@@ -35,7 +35,7 @@ if(!is_null($_SESSION['user_fontsize'])){
 }
 
 // Font color
-if(!is_null($_SESSION['user_fontcolor'])){
+if (!is_null($_SESSION['user_fontcolor'])) {
     echo "<style type='text/css'>
         #single_course p {
             color: " . $_SESSION['user_fontcolor'] . ";  
@@ -48,7 +48,7 @@ if(!is_null($_SESSION['user_fontcolor'])){
 }
 
 // Link and title color
-if(!is_null($_SESSION['user_eltcolor_1'])){
+if (!is_null($_SESSION['user_eltcolor_1'])) {
     echo "<style type='text/css'>
         #single_course h1, #single_course h3{
             color: " . $_SESSION['user_eltcolor_1'] . ";  
@@ -57,7 +57,7 @@ if(!is_null($_SESSION['user_eltcolor_1'])){
 }
 
 // Button color
-if(!is_null($_SESSION['user_eltcolor_2'])){
+if (!is_null($_SESSION['user_eltcolor_2'])) {
     echo "<style type='text/css'>
         #single_course a{
             background: " . $_SESSION['user_eltcolor_2'] . ";
@@ -67,7 +67,7 @@ if(!is_null($_SESSION['user_eltcolor_2'])){
 }
 
 // Error color
-if(!is_null($_SESSION['user_eltcolor_3'])){
+if (!is_null($_SESSION['user_eltcolor_3'])) {
     echo "<style type='text/css'>
         #single_course a{
             color: " . $_SESSION['user_eltcolor_3'] . ";
@@ -76,7 +76,7 @@ if(!is_null($_SESSION['user_eltcolor_3'])){
 }
 
 // Error color
-if(!is_null($_SESSION['user_eltcolor_3'])){
+if (!is_null($_SESSION['user_eltcolor_3'])) {
     echo "<style type='text/css'>
         #single_course a{
             color: " . $_SESSION['user_eltcolor_3'] . ";
@@ -85,7 +85,7 @@ if(!is_null($_SESSION['user_eltcolor_3'])){
 }
 
 // Background color
-if(!is_null($_SESSION['user_bgcolor'])){
+if (!is_null($_SESSION['user_bgcolor'])) {
     echo "<style type='text/css'>
         #single_course {
             background: " . $_SESSION['user_bgcolor'] . ";
@@ -115,9 +115,14 @@ if(!is_null($_SESSION['user_bgcolor'])){
 </div>
 
 <section id="single_course">
+    <div class="homepage-logo-container">
+        <a href="/accessability"><img src="src/logo-lookable.png" alt="logo Lookable" class="w-100"></a>
+    </div>
     <div class="container">
         <main id="single_course_main_content" class="main-container">
-            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
+            <div class="btn-retour-cours-container w-100 d-flex justify-content-center mb-5">
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
+            </div>
 
             <h1 id="course_title_custom" class="text-center mb-4"><?= $course['course_title'] ?></h1>
             <hr>
@@ -137,7 +142,7 @@ if(!is_null($_SESSION['user_bgcolor'])){
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_2'] ?></h3>
                 <hr>
                 <p id="para-course-2" class="para-course-2 para-custom">
-                <?= $course['course_text_2'] ?>
+                    <?= $course['course_text_2'] ?>
                 </p>
 
                 <h3 class="course-subtitle-custom mb-2 mt-4"><?= $course['course_subtitle_audio'] ?></h3>
@@ -147,7 +152,9 @@ if(!is_null($_SESSION['user_bgcolor'])){
                 </div>
             </div>
 
-            <a href="courses.php" class="btn btn-primary btn-retour-cours w-100 btn-action-custom mb-4 shadow-sm">RETOUR AUX COURS</a>
+            <div class="btn-retour-cours-container w-100 d-flex justify-content-center">
+                <a href="courses.php" class="btn btn-primary btn-retour-cours btn-action-custom mb-4 shadow-sm">Retour aux cours</a>
+            </div>
         </main>
     </div>
 </section>

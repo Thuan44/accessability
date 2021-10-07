@@ -1,5 +1,11 @@
 <?php
 include_once 'header.php';
+
+// If user is not connected
+if(!isset($_SESSION['user_id'])){
+    header('Location: index.php');
+}
+
 $user_id = @$_SESSION['user_id'];
 $course_id = @$_POST['course_id'];
 
@@ -19,6 +25,10 @@ $listCoursesById = listCoursesById($user_id);
             <i class="fas fa-power-off fa-6x"></i>
             </i>
         </a>
+    </div>
+
+    <div class="homepage-logo-container">
+        <a href="/accessability"><img src="src/logo-lookable.png" alt="logo Lookable" class="w-100"></a>
     </div>
 
     <div class="course-bar-right">
@@ -75,10 +85,11 @@ $listCoursesById = listCoursesById($user_id);
                     <div class="card-body justify-content-center">
                         <?php echo $row['course_title']; ?>
                     </div>
-                    <div class="card_button">
-                        <input type="submit" class="btn btn-primary course_items" name="add"" value=" Aller au cours">
+                    <form action="" method="post">
+                        <input type="submit" class="btn btn-primary follow-course_items my-2" name="add"" value=" Aller
+                            au cours">
                         <input type="hidden" name="course_id" value="<?= $row["course_id"] ?>">
-                    </div>
+                    </form>
                 </div>
             </div>
 
